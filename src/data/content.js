@@ -222,7 +222,12 @@ export const timelineCategories = {
 }
 
 export const timelineSource =
-  '資料來源：國立臺灣師範大學 115學年度第1學期學士班註冊須知；轉聯會新生包。實際日期請務必以教務處最新行事曆公告為準（aa.ntnu.edu.tw/zh_tw/Calender）。'
+  '資料來源：國立臺灣師範大學 115學年度第1學期學士班註冊須知；轉聯會新生包。實際日期請務必以教務處最新行事曆公告為準。'
+
+export const officialCalendarLink = {
+  label: '教務處｜學校行事曆（官方公告版本）',
+  url: 'https://www.aa.ntnu.edu.tw/zh_tw/Calender',
+}
 
 // ---------------------------------------------------------------------------
 // 學分抵免
@@ -249,6 +254,10 @@ export const creditTransfer = {
     '推廣教育學分抵免不得超過畢業應修學分之 1/2（依教育部通則）',
   ],
   contact: '教務處註冊組　(02) 7749-1077',
+  officialLink: {
+    label: '教務處｜學分抵免專頁',
+    url: 'https://www.aa.ntnu.edu.tw/zh_tw/Registry/CreditTransfer/CreditTransfer01',
+  },
 }
 
 // ---------------------------------------------------------------------------
@@ -270,6 +279,10 @@ export const courseSelection = {
     '選課系統每日開放時間為 9:00–24:00',
     '轉學生在每一個選課階段都可以參與選課，別漏掉任一階段',
   ],
+  officialLink: {
+    label: '教務處｜選課日程表',
+    url: 'https://www.aa.ntnu.edu.tw/zh_tw/selectives/Dayschool/Courseselection',
+  },
   generalEducation: {
     summary: '通識課程總計至少 16 學分（含共同必修）',
     structure: [
@@ -287,6 +300,7 @@ export const courseSelection = {
     ],
     caveat:
       '109 學年度（含）以後入學者適用「博雅課程」架構（各領域至多 8 學分、跨域探索課程相加至多 10 學分）；108 學年度（含）以前入學者各領域上限為 6 學分。轉學生實際適用年級與抵免後的通識架構，請務必向通識教育中心或註冊組確認（待確認）。',
+    officialLink: { label: '通識教育中心 官網', url: 'https://www.cge.ntnu.edu.tw/' },
   },
   intercollegiate: {
     summary:
@@ -300,6 +314,10 @@ export const courseSelection = {
     tool: {
       label: '師大好排課（衝堂警告、學長姐真實評分）',
       url: 'https://ntnu-scheduler-pro.pages.dev/',
+    },
+    officialLink: {
+      label: '教務處｜校際選課（臺灣大學系統）',
+      url: 'https://www.aa.ntnu.edu.tw/zh_tw/selectives/Dayschool/Intercollegiate',
     },
   },
   crossProgram: {
@@ -324,6 +342,10 @@ export const graduationRequirements = {
     '教務處課務組／各系所辦公室（可攜學生證現場詢問）',
     '入學時發放的系級「課程地圖」或「模組化課程規劃表」',
   ],
+  officialLink: {
+    label: '教務處｜師大課程地圖系統（查各系修業地圖）',
+    url: 'http://coursemap.itc.ntnu.edu.tw/course_map_all/class.php?code=GU',
+  },
 }
 
 // ---------------------------------------------------------------------------
@@ -354,6 +376,10 @@ export const transportation = {
     '其他學院各系所：主要於校本部（和平校區）上課',
     '公館校區至校本部：搭公車＋步行，約需 15 分鐘，安排課表時建議預留緩衝時間',
   ],
+  housingOfficialLink: {
+    label: '學生住宿服務中心｜宿舍介紹與申請',
+    url: 'https://dorm.sa.ntnu.edu.tw/',
+  },
   runningClass: {
     title: '跨校跑堂（臺大、臺科大）建議',
     tips: [
@@ -550,6 +576,10 @@ export const usefulLinks = [
   { label: '學生兵役申請', url: 'https://assistance.sa.ntnu.edu.tw/rights-3/' },
   { label: '就學貸款', url: 'https://assistance.sa.ntnu.edu.tw/loan/' },
   { label: '課程查詢／選課系統', url: 'https://www.aa.ntnu.edu.tw/zh_tw/selectives/Dayschool/CourseInquiry' },
+  { label: '學雜費專區', url: 'https://www.aa.ntnu.edu.tw/Tuition' },
+  { label: '學生住宿服務中心', url: 'https://dorm.sa.ntnu.edu.tw/' },
+  { label: '通識教育中心', url: 'https://www.cge.ntnu.edu.tw/' },
+  { label: '師大課程地圖系統', url: 'http://coursemap.itc.ntnu.edu.tw/course_map_all/class.php?code=GU' },
 ]
 
 export const contactPhones = [

@@ -1,6 +1,7 @@
 import { useMemo, useState } from 'react'
-import { timeline, timelineCategories, timelineSource } from '../data/content'
+import { timeline, timelineCategories, timelineSource, officialCalendarLink } from '../data/content'
 import { buildMonthMatrix, isoDate, eventsOnDate, WEEKDAYS } from '../utils/calendar'
+import OfficialLink from './OfficialLink'
 
 const MONTHS = [
   { year: 2026, monthIndex: 7, label: '2026 年 8 月' },
@@ -143,6 +144,9 @@ export default function Timeline() {
       </div>
 
       <p className="mt-8 text-center text-[12px] text-navy-400">{timelineSource}</p>
+      <div className="mt-4 flex justify-center">
+        <OfficialLink link={officialCalendarLink} />
+      </div>
     </section>
   )
 }

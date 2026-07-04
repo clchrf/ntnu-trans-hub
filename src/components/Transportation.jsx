@@ -1,4 +1,5 @@
 import { transportation, courseSelection } from '../data/content'
+import OfficialLink from './OfficialLink'
 
 function StopRow({ stops }) {
   return (
@@ -57,6 +58,7 @@ export default function Transportation() {
               </li>
             ))}
           </ul>
+          <OfficialLink link={transportation.housingOfficialLink} className="mt-4" />
         </div>
 
         <div>
@@ -96,14 +98,17 @@ export default function Transportation() {
             </li>
           ))}
         </ul>
-        <a
-          href={courseSelection.intercollegiate.tool.url}
-          target="_blank"
-          rel="noreferrer"
-          className="mt-6 inline-flex items-center gap-2 rounded-full bg-navy-950 px-5 py-2.5 text-[13px] font-medium text-white transition hover:bg-navy-800"
-        >
-          {courseSelection.intercollegiate.tool.label} ↗
-        </a>
+        <div className="mt-6 flex flex-wrap items-center gap-3">
+          <a
+            href={courseSelection.intercollegiate.tool.url}
+            target="_blank"
+            rel="noreferrer"
+            className="inline-flex items-center gap-2 rounded-full bg-navy-950 px-5 py-2.5 text-[13px] font-medium text-white transition hover:bg-navy-800"
+          >
+            {courseSelection.intercollegiate.tool.label} ↗
+          </a>
+          <OfficialLink link={courseSelection.intercollegiate.officialLink} />
+        </div>
       </div>
     </section>
   )

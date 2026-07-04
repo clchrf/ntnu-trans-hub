@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import { creditTransfer, courseSelection, graduationRequirements } from '../data/content'
+import OfficialLink from './OfficialLink'
 
 const TABS = ['學分抵免', '選課與通識指南', '畢業門檻與語言檢定']
 
@@ -54,6 +55,7 @@ function CreditTransferPanel() {
           ))}
         </ul>
         <p className="mt-4 text-[12px] text-navy-400">諮詢窗口：{creditTransfer.contact}</p>
+        <OfficialLink link={creditTransfer.officialLink} className="mt-4" />
       </div>
     </div>
   )
@@ -80,6 +82,7 @@ function CourseSelectionPanel() {
           </li>
         ))}
       </ul>
+      <OfficialLink link={courseSelection.officialLink} className="mt-4" />
 
       <div className="mt-10">
         <h3 className="text-[15px] font-semibold text-navy-950">{courseSelection.generalEducation.summary}</h3>
@@ -98,6 +101,7 @@ function CourseSelectionPanel() {
         <p className="mt-4 rounded-xl bg-amber-50 p-4 text-[12px] leading-relaxed text-amber-800">
           待確認：{courseSelection.generalEducation.caveat}
         </p>
+        <OfficialLink link={courseSelection.generalEducation.officialLink} className="mt-4" />
       </div>
 
       <div className="mt-10 rounded-2xl bg-navy-50 p-6">
@@ -105,14 +109,7 @@ function CourseSelectionPanel() {
         <p className="mt-2 text-[13px] leading-relaxed text-navy-600">
           待確認：{courseSelection.crossProgram.notice}
         </p>
-        <a
-          href={courseSelection.crossProgram.link.url}
-          target="_blank"
-          rel="noreferrer"
-          className="mt-3 inline-block text-[13px] font-medium text-navy-950 underline decoration-navy-300 underline-offset-4"
-        >
-          {courseSelection.crossProgram.link.label} ↗
-        </a>
+        <OfficialLink link={courseSelection.crossProgram.link} className="mt-3" />
       </div>
     </div>
   )
@@ -133,6 +130,7 @@ function GraduationPanel() {
           </li>
         ))}
       </ul>
+      <OfficialLink link={graduationRequirements.officialLink} className="mt-5" />
     </div>
   )
 }

@@ -9,6 +9,7 @@ export default function Feedback() {
   const [message, setMessage] = useState('')
   const [honey, setHoney] = useState('')
   const [status, setStatus] = useState('idle') // idle | sending | success | error
+  const [needsActivation, setNeedsActivation] = useState(false)
 
   async function handleSubmit(e) {
     e.preventDefault()
@@ -31,14 +32,17 @@ export default function Feedback() {
       const data = await res.json().catch(() => null)
       if (res.ok && data && (data.success === 'true' || data.success === true)) {
         setStatus('success')
+        setNeedsActivation(false)
         setName('')
         setIdentity('')
         setMessage('')
       } else {
         setStatus('error')
+        setNeedsActivation(Boolean(data?.message && /activation/i.test(data.message)))
       }
     } catch {
       setStatus('error')
+      setNeedsActivation(false)
     }
   }
 
@@ -117,7 +121,12 @@ export default function Feedback() {
               收到了，謝謝你的分享！
             </p>
           )}
-          {status === 'error' && (
+          {status === 'error' && needsActivation && (
+            <p className="mt-4 rounded-xl bg-amber-50 p-3 text-center text-[13px] text-amber-800">
+              表單尚未啟用：請到 ntnutrans2016@gmail.com 收件匣（含垃圾郵件）找 FormSubmit 寄來的信，點擊「Activate Form」連結啟用一次，之後投稿就會正常送達。
+            </p>
+          )}
+          {status === 'error' && !needsActivation && (
             <p className="mt-4 rounded-xl bg-rose-50 p-3 text-center text-[13px] text-rose-700">
               送出失敗了，可以稍後再試一次，或直接私訊我們的 Instagram。
             </p>

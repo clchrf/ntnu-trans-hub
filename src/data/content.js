@@ -371,9 +371,13 @@ export const transportation = {
       { campus: '和平校區', location: '師大公車站牌' },
       { campus: '公館校區', location: '師大分部站牌' },
     ],
+    officialLink: {
+      label: '台北市公車動態｜復興幹線即時班次',
+      url: 'https://ebus.gov.taipei/EBus/VsSimpleMap?routeid=0161000800',
+    },
   },
   metro: {
-    detail: '搭捷運可於古亭站（步行約 10 分鐘）或台電大樓站（步行約 8 分鐘）步行至和平校區；公館站步行約 15 分鐘可達公館校區。',
+    detail: '搭捷運可於古亭站（步行約 10 分鐘）步行至和平校區；公館站步行約 15 分鐘可達公館校區。',
   },
   campusChoice: [
     '理學院各系所、運動競技學系：主要於公館校區上課',

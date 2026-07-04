@@ -39,6 +39,7 @@ export default function Transportation() {
           <h3 className="mt-4 text-[17px] font-semibold text-navy-950">{transportation.bus.title}</h3>
           <p className="mt-2 text-[14px] leading-relaxed text-navy-600">{transportation.bus.detail}</p>
           <StopRow stops={transportation.bus.stops} />
+          <OfficialLink link={transportation.bus.officialLink} className="mt-4" />
         </div>
       </div>
 

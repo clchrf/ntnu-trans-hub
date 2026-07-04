@@ -17,7 +17,7 @@ export default function Hero() {
         </span>
 
         <h1 className="mt-6 text-4xl font-semibold tracking-tight text-navy-950 md:text-6xl">
-          給轉學生、轉系生的
+          給轉學生的
           <br className="hidden md:block" />
           師大生活資訊站
         </h1>

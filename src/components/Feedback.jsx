@@ -72,7 +72,7 @@ export default function Feedback() {
                 value={name}
                 onChange={(e) => setName(e.target.value)}
                 placeholder="匿名"
-                className="mt-1.5 w-full rounded-xl border border-navy-200 px-4 py-2.5 text-[14px] text-navy-950 outline-none transition focus:border-navy-500"
+                className="mt-1.5 w-full rounded-xl border border-navy-200 px-4 py-2.5 text-[16px] text-navy-950 outline-none transition focus:border-navy-500"
               />
             </div>
             <div>
@@ -80,7 +80,7 @@ export default function Feedback() {
               <select
                 value={identity}
                 onChange={(e) => setIdentity(e.target.value)}
-                className="mt-1.5 w-full rounded-xl border border-navy-200 bg-white px-4 py-2.5 text-[14px] text-navy-950 outline-none transition focus:border-navy-500"
+                className="mt-1.5 w-full rounded-xl border border-navy-200 bg-white px-4 py-2.5 text-[16px] text-navy-950 outline-none transition focus:border-navy-500"
               >
                 <option value="">不指定</option>
                 {IDENTITIES.map((it) => (
@@ -100,7 +100,7 @@ export default function Feedback() {
               onChange={(e) => setMessage(e.target.value)}
               rows={5}
               placeholder="給下一屆的建議、對轉聯會的回饋、想分享的轉學經驗⋯⋯都可以寫在這裡"
-              className="mt-1.5 w-full resize-none rounded-2xl border border-navy-200 px-4 py-3 text-[14px] text-navy-950 outline-none transition focus:border-navy-500"
+              className="mt-1.5 w-full resize-none rounded-2xl border border-navy-200 px-4 py-3 text-[16px] text-navy-950 outline-none transition focus:border-navy-500"
             />
           </div>
 

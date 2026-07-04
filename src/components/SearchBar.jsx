@@ -27,7 +27,7 @@ export default function SearchBar({ autoFocus = false, className = '' }) {
           onFocus={() => setFocused(true)}
           onBlur={() => setTimeout(() => setFocused(false), 150)}
           placeholder="搜尋學分抵免、選課時程、住宿、跨校交通、FAQ…"
-          className="w-full bg-transparent text-[15px] text-navy-950 placeholder:text-navy-400 focus:outline-none"
+          className="w-full bg-transparent text-[16px] text-navy-950 placeholder:text-navy-400 focus:outline-none"
         />
       </div>
 

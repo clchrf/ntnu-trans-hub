@@ -578,11 +578,11 @@ export const faqs = [
 // 提問／回饋管道：直接導向 IG 私訊，不使用另外的 Google 表單
 export const questionIgDmUrl = club.contact.instagram.dmUrl
 
-// 許願池（學期回饋）表單：以 FormSubmit.co 靜態表單直接寄送到社團信箱，無需自建後端
-// 使用 FormSubmit 提供的專屬 token 取代信箱本人，避免網站原始碼中直接曝露 email（防爬蟲蒐集）
-// 注意：該信箱第一次收到投稿時，FormSubmit 會寄一封啟用確認信，需點擊一次才會開始正常轉送後續內容
+// 許願池（學期回饋）表單：以 Web3Forms 靜態表單直接寄送到社團信箱，無需自建後端
+// access key 綁定 ntnutrans2016@gmail.com，若要更換收件信箱請至 web3forms.com 重新產生
 export const feedbackForm = {
-  endpoint: 'https://formsubmit.co/ajax/1df71e558ad08ef4336635d3ab2a7540',
+  endpoint: 'https://api.web3forms.com/submit',
+  accessKey: '3e4b887f-7cfd-4996-9b44-2d92b38d84e7',
   subject: 'NTNU Trans Hub 許願池投稿',
 }
 

@@ -27,7 +27,7 @@ export default function SearchBar({ autoFocus = false, className = '' }) {
           onFocus={() => setFocused(true)}
           onBlur={() => setTimeout(() => setFocused(false), 150)}
           placeholder="搜尋學分抵免、選課時程、住宿、跨校交通、FAQ…"
-          className="w-full bg-transparent text-[16px] text-navy-950 placeholder:text-navy-400 focus:outline-none"
+          className="w-full min-w-0 bg-transparent text-[16px] text-navy-950 placeholder:text-navy-400 focus:outline-none"
         />
       </div>
 
@@ -36,7 +36,7 @@ export default function SearchBar({ autoFocus = false, className = '' }) {
           {results.length === 0 ? (
             <p className="px-5 py-4 text-[14px] text-navy-400">找不到相關內容，試試其他關鍵字，或直接到 FAQ 提問。</p>
           ) : (
-            <ul className="max-h-96 divide-y divide-navy-50 overflow-y-auto">
+            <ul className="max-h-64 divide-y divide-navy-50 overflow-y-auto sm:max-h-96">
               {results.map((r, i) => (
                 <li key={i}>
                   <a
@@ -44,13 +44,15 @@ export default function SearchBar({ autoFocus = false, className = '' }) {
                     className="flex flex-col gap-1 px-5 py-3 transition hover:bg-navy-50"
                     onClick={() => setQuery('')}
                   >
-                    <span className="flex items-center gap-2">
-                      <span className="rounded-full bg-navy-100 px-2 py-0.5 text-[11px] font-medium text-navy-700">
+                    <span className="flex flex-wrap items-center gap-x-2 gap-y-1">
+                      <span className="flex-none rounded-full bg-navy-100 px-2 py-0.5 text-[11px] font-medium text-navy-700">
                         {r.tag}
                       </span>
-                      <span className="text-[14px] font-medium text-navy-950">{r.title}</span>
+                      <span className="min-w-0 break-words text-[14px] font-medium text-navy-950">{r.title}</span>
                     </span>
-                    {r.snippet && <span className="text-[12px] text-navy-500">{r.snippet}</span>}
+                    {r.snippet && (
+                      <span className="min-w-0 break-words text-[12px] text-navy-500">{r.snippet}</span>
+                    )}
                   </a>
                 </li>
               ))}

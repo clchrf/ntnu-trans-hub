@@ -21,7 +21,7 @@ export default function Navbar() {
           <img
             src={`${base}logo/icon-navy.png`}
             alt="NTNU Trans 轉學生聯會 Logo"
-            className="h-9 w-9 object-contain"
+            className="h-12 w-12 object-contain"
           />
           <span className="flex flex-col leading-none">
             <span className="text-[15px] font-semibold tracking-tight text-navy-950">NTNU Trans</span>

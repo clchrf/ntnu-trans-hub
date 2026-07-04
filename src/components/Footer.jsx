@@ -12,7 +12,7 @@ export default function Footer() {
             <img
               src={`${base}logo/full-white.png`}
               alt="NTNU Trans 轉學生聯會 Logo"
-              className="h-14 w-auto object-contain"
+              className="h-20 w-auto object-contain"
             />
             <p className="mt-4 max-w-xs text-[13px] leading-relaxed text-navy-300">
               {club.description}

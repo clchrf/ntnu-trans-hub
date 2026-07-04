@@ -24,8 +24,12 @@ export const club = {
     { role: '副會長', dept: '衛教系117', name: '潘貞臻' },
   ],
   contact: {
-    email: 'ntnutrans2016@gmail.con',
-    instagram: { handle: '@ntnu_trans', url: 'https://www.instagram.com/ntnu_trans' },
+    email: 'ntnutrans2016@gmail.com',
+    instagram: {
+      handle: '@ntnu_trans',
+      url: 'https://www.instagram.com/ntnu_trans',
+      dmUrl: 'https://ig.me/m/ntnu_trans',
+    },
     facebook: { label: 'NTNU Trans 轉學生聯會', url: 'https://www.facebook.com/share/1EMQtQu4ts/?mibextid=wwXIfr' },
   },
   events: [
@@ -403,10 +407,21 @@ export const resources = {
   archive: {
     title: '歷屆考古題與筆記資源',
     notice:
-      '各系考古題／筆記多由系學會或直屬學長姐保管流通，目前尚未有全校統一公開資料庫。轉聯會正在盤點各系資源連結，若你有現成的雲端資料夾歡迎投稿補充（待確認）。',
+      '各系考古題／筆記多由系學會或直屬學長姐保管流通，目前尚未有全校統一公開資料庫。以下是目前找到、確認可用的系所資源，其他系所仍在盤點中，歡迎透過下方「許願池」投稿補充（待確認）。',
+    subjectLinks: [
+      {
+        label: '微積分（數學系）統一會考考古題',
+        detail: '數學系官方課程網站的考古題專區',
+        url: 'https://math2.math.ntnu.edu.tw/course/calculus/exam.php',
+      },
+      {
+        label: '資訊工程學系課程資源',
+        detail: '學生維護的考古題／筆記／作業整理，涵蓋程式設計、資結、機率、線代等課程',
+        url: 'https://github.com/NTNU-CSIE/course-resource',
+      },
+    ],
     placeholderLinks: [
-      { label: '轉聯會共用雲端資料夾', url: '#', tbd: true },
-      { label: '各系系學會資源盤點中', url: '#', tbd: true },
+      { label: '其他系所資源盤點中', url: '#', tbd: true },
     ],
   },
   campusLife: {
@@ -552,11 +567,19 @@ export const faqs = [
   },
   {
     q: '還有問題想問轉聯會，怎麼聯絡？',
-    a: '歡迎透過下方「提問表單」留言，或直接私訊我們的 Instagram／Facebook，也可以寄信到社團信箱，學長姐都會盡量回覆！',
+    a: '最快的方式是直接私訊我們的 Instagram，也可以寄信到社團信箱；如果是想給建議或分享經驗，歡迎填最下方的「許願池」表單，學長姐都會盡量回覆！',
   },
 ]
 
-export const questionFormUrl = '#' // 待確認：請填入實際 Google 表單連結
+// 提問／回饋管道：直接導向 IG 私訊，不使用另外的 Google 表單
+export const questionIgDmUrl = club.contact.instagram.dmUrl
+
+// 許願池（學期回饋）表單：以 FormSubmit.co 靜態表單直接寄送到社團信箱，無需自建後端
+// 注意：該信箱第一次收到投稿時，FormSubmit 會寄一封啟用確認信，需點擊一次才會開始正常轉送後續內容
+export const feedbackForm = {
+  endpoint: `https://formsubmit.co/ajax/${club.contact.email}`,
+  subject: 'NTNU Trans Hub 許願池投稿',
+}
 
 // ---------------------------------------------------------------------------
 // 常用連結

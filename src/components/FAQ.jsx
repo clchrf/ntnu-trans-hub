@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react'
-import { faqs, questionFormUrl, usefulLinks, contactPhones } from '../data/content'
+import { faqs, questionIgDmUrl, usefulLinks, contactPhones } from '../data/content'
 
 function AccordionItem({ index, item, openIndex, setOpenIndex }) {
   const isOpen = openIndex === index
@@ -61,15 +61,15 @@ export default function FAQ() {
           <div className="mt-8 rounded-3xl bg-navy-950 p-8 text-center text-white">
             <p className="text-[16px] font-semibold">還有問題沒解決？</p>
             <p className="mt-2 text-[13px] text-navy-200">
-              留下你的問題，轉聯會學長姐會盡快回覆（也歡迎直接私訊 IG／FB）
+              私訊我們的 Instagram 最快，學長姐會盡快回覆
             </p>
             <a
-              href={questionFormUrl}
+              href={questionIgDmUrl}
               target="_blank"
               rel="noreferrer"
               className="mt-5 inline-block rounded-full bg-white px-6 py-2.5 text-[13px] font-medium text-navy-950 transition hover:bg-navy-100"
             >
-              前往提問表單
+              私訊 Instagram 提問
             </a>
           </div>
         </div>

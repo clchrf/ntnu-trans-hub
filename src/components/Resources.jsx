@@ -50,7 +50,23 @@ export default function Resources() {
         {/* 考古題 */}
         <div className="card-ios mt-14 p-8">
           <h3 className="text-[17px] font-semibold text-navy-950">{archive.title}</h3>
-          <p className="mt-2 rounded-xl bg-amber-50 p-4 text-[13px] leading-relaxed text-amber-800">
+
+          <div className="mt-4 grid gap-3 sm:grid-cols-2">
+            {archive.subjectLinks.map((s, i) => (
+              <a
+                key={i}
+                href={s.url}
+                target="_blank"
+                rel="noreferrer"
+                className="rounded-2xl bg-navy-50 p-4 transition hover:bg-navy-100"
+              >
+                <p className="text-[14px] font-medium text-navy-950">{s.label} ↗</p>
+                <p className="mt-1 text-[12px] leading-relaxed text-navy-500">{s.detail}</p>
+              </a>
+            ))}
+          </div>
+
+          <p className="mt-4 rounded-xl bg-amber-50 p-4 text-[13px] leading-relaxed text-amber-800">
             待確認：{archive.notice}
           </p>
           <div className="mt-4 flex flex-wrap gap-3">

@@ -6,6 +6,7 @@ import AcademicGuide from './components/AcademicGuide'
 import Transportation from './components/Transportation'
 import Resources from './components/Resources'
 import FAQ from './components/FAQ'
+import Feedback from './components/Feedback'
 import Footer from './components/Footer'
 
 export default function App() {
@@ -20,6 +21,7 @@ export default function App() {
         <Transportation />
         <Resources />
         <FAQ />
+        <Feedback />
       </main>
       <Footer />
     </div>

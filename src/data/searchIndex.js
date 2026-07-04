@@ -53,6 +53,9 @@ function build() {
     href: '#resources',
   })
   items.push({ tag: '考古題', title: resources.archive.title, snippet: resources.archive.notice, href: '#resources' })
+  resources.archive.subjectLinks.forEach((s) => {
+    items.push({ tag: '考古題', title: s.label, snippet: s.detail, href: '#resources' })
+  })
 
   resources.food.spots.forEach((s) => {
     items.push({ tag: '美食推薦', title: s.name, snippet: s.note || '', href: '#resources' })
@@ -80,6 +83,13 @@ function build() {
 
   faqs.forEach((f, i) => {
     items.push({ tag: 'FAQ', title: f.q, snippet: f.a, href: `#faq-${i}` })
+  })
+
+  items.push({
+    tag: '許願池',
+    title: '許願池：給下一屆的建議、對轉聯會的回饋',
+    snippet: '匿名投稿也可以',
+    href: '#feedback',
   })
 
   return items

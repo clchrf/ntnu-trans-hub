@@ -47,6 +47,7 @@ export default function Footer() {
               <li><a href="#academic-guide" className="hover:text-white">學務指南</a></li>
               <li><a href="#transportation" className="hover:text-white">跨區交通</a></li>
               <li><a href="#faq" className="hover:text-white">FAQ 與提問</a></li>
+              <li><a href="#feedback" className="hover:text-white">許願池</a></li>
             </ul>
           </div>
         </div>

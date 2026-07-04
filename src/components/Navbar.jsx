@@ -6,6 +6,7 @@ const NAV_ITEMS = [
   { label: '跨區交通', href: '#transportation' },
   { label: '在地資源', href: '#resources' },
   { label: 'FAQ', href: '#faq' },
+  { label: '許願池', href: '#feedback' },
 ]
 
 export default function Navbar() {

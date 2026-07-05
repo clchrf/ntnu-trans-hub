@@ -4,6 +4,7 @@ const NAV_ITEMS = [
   { label: '重要時程', href: '#timeline' },
   { label: '學務指南', href: '#academic-guide' },
   { label: '跨區交通', href: '#transportation' },
+  { label: '校園地圖', href: '#map' },
   { label: '在地資源', href: '#resources' },
   { label: 'FAQ', href: '#faq' },
   { label: '許願池', href: '#feedback' },

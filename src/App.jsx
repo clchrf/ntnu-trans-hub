@@ -4,6 +4,7 @@ import ClubIntro from './components/ClubIntro'
 import Timeline from './components/Timeline'
 import AcademicGuide from './components/AcademicGuide'
 import Transportation from './components/Transportation'
+import CampusMap from './components/CampusMap'
 import Resources from './components/Resources'
 import FAQ from './components/FAQ'
 import Feedback from './components/Feedback'
@@ -19,6 +20,7 @@ export default function App() {
         <Timeline />
         <AcademicGuide />
         <Transportation />
+        <CampusMap />
         <Resources />
         <FAQ />
         <Feedback />

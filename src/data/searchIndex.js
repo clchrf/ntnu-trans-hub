@@ -1,4 +1,4 @@
-import { timeline, creditTransfer, courseSelection, transportation, resources, faqs } from './content'
+import { timeline, creditTransfer, courseSelection, transportation, resources, faqs, mapLocations } from './content'
 
 // 集中建立全站搜尋索引：每筆包含 title / snippet / href（供跳轉）/ tag（分類標籤）
 function build() {
@@ -79,6 +79,10 @@ function build() {
 
   resources.campusResources.items.forEach((it) => {
     items.push({ tag: '校內資源', title: it.label, snippet: it.detail, href: '#resources' })
+  })
+
+  mapLocations.forEach((loc) => {
+    items.push({ tag: '校園地圖', title: loc.name, snippet: loc.category, href: '#map' })
   })
 
   faqs.forEach((f, i) => {

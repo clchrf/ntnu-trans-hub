@@ -587,6 +587,60 @@ export const feedbackForm = {
 }
 
 // ---------------------------------------------------------------------------
+// 校園地圖
+// ---------------------------------------------------------------------------
+export const mapCategories = {
+  校區: { color: '#161457', dotClass: 'bg-navy-950' },
+  交通: { color: '#0284c7', dotClass: 'bg-sky-600' },
+  美食: { color: '#e11d48', dotClass: 'bg-rose-600' },
+}
+
+// 座標來源：校區座標取自 OpenStreetMap（Photon 地理編碼）；接駁車／公車站牌座標取自轉聯會新生包內
+// Google 街景連結解析出的實際經緯度；美食地點座標為所在巷弄的街廓層級定位（非精確門牌釘選）。
+// 宿舍（學七舍、學二舍、誠樓等）座標尚未取得可靠來源，故未列入地圖，待確認後再補上。
+export const mapLocations = [
+  { id: 'campus-heping', name: '師大和平校區（校本部）', category: '校區', lat: 25.0257576, lng: 121.5266168 },
+  { id: 'campus-gongguan', name: '師大公館校區', category: '校區', lat: 25.0082321, lng: 121.5357715 },
+  {
+    id: 'shuttle-heping',
+    name: '免費接駁車站｜和平校區（II 教育大樓前）',
+    category: '交通',
+    lat: 25.0274537,
+    lng: 121.5293901,
+  },
+  {
+    id: 'shuttle-gongguan',
+    name: '免費接駁車站｜公館校區（綜合館前）',
+    category: '交通',
+    lat: 25.0077687,
+    lng: 121.5368098,
+  },
+  {
+    id: 'bus-heping',
+    name: '復興幹線公車站｜和平校區（師大公車站牌）',
+    category: '交通',
+    lat: 25.0267353,
+    lng: 121.527884,
+  },
+  {
+    id: 'bus-gongguan',
+    name: '復興幹線公車站｜公館校區（師大分部站牌）',
+    category: '交通',
+    lat: 25.0076571,
+    lng: 121.5383942,
+  },
+  { id: 'food-kaojin', name: '靠近', category: '美食', lat: 25.0229861, lng: 121.5275969 },
+  { id: 'food-startcurry', name: 'Start Curry', category: '美食', lat: 25.023962, lng: 121.528862 },
+  { id: 'food-chicken', name: '師大雞肉飯專門店', category: '美食', lat: 25.024162, lng: 121.529162 },
+  { id: 'food-porridge', name: '食粥致神仙', category: '美食', lat: 25.0244322, lng: 121.5294163 },
+  { id: 'food-burger', name: '13_Burger', category: '美食', lat: 25.0242752, lng: 121.5289903 },
+  { id: 'food-katsu', name: '咔滋日式豬排專賣店', category: '美食', lat: 25.0241, lng: 121.5288 },
+]
+
+export const mapNote =
+  '地圖標記為街廓／巷弄層級的概略位置，非精確門牌釘選，實際地點請以美食清單中的 Google Maps 連結為準。宿舍（學七舍、學二舍、誠樓等）座標尚未取得可靠來源，待確認後補上。'
+
+// ---------------------------------------------------------------------------
 // 常用連結
 // ---------------------------------------------------------------------------
 export const usefulLinks = [

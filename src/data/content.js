@@ -243,6 +243,8 @@ export const creditTransfer = {
     '具修習教育學程資格者（限教育專業課程抵免）',
   ],
   window: '115 年 8 月 24 日至 9 月 11 日止，逾期不受理，須待次學期再辦理。',
+  generalWindowNote:
+    '一般規則：學分抵免作業於各學期開學前一週起受理，至開學後一週內依規定辦理完畢，逾期不受理（實際仍以每學期教務處公告的正式期限為準）。',
   procedure: [
     '登入校務行政資訊入口網／教務資訊系統／一般科目抵免申請系統，線上提出申請',
     '列印申請表，並檢附原就讀學校成績單正本',
@@ -261,6 +263,10 @@ export const creditTransfer = {
   officialLink: {
     label: '教務處｜學分抵免專頁',
     url: 'https://www.aa.ntnu.edu.tw/zh_tw/Registry/CreditTransfer/CreditTransfer01',
+  },
+  handbookLink: {
+    label: '教務處｜新生手冊（含學分抵免期限說明）',
+    url: 'https://www.aa.ntnu.edu.tw/uploads/asset/data/64180622843f751ab2f36ec2/20220426%E6%96%B0%E7%94%9F%E6%89%8B%E5%86%8A_%E5%AE%9A%E7%A8%BF_.pdf',
   },
 }
 
@@ -326,11 +332,23 @@ export const courseSelection = {
   },
   crossProgram: {
     title: '雙主修、輔系、學分學程、轉系申請',
-    notice:
-      '申請資格、名額與截止日期依各學系年度公告而異，官方統整規定請見教務處 FAQ；細節仍在蒐集中（待確認）。',
+    rules: [
+      '大學部雙主修、輔系規定已大幅鬆綁：只要修畢該領域規定的「第一門課」，即可申請登記修讀雙主修及輔系（預修生登記制）',
+      '採甄選制的學系（如美術系、設計系、體育系、心輔系〔112 學年度起〕等）不適用前述預修生登記制度，仍須另外參加該系甄選',
+      '轉系規定：學士班二年級轉學生不得申請轉系（避免重複轉系）',
+    ],
+    notice: '各系實際名額、截止日期仍逐年公告而異，正式規定請以教務處與各系所公告為準。',
     link: {
       label: '教務處 FAQ：轉系、雙主修、輔系、學分學程、逕讀博士學位、碩士先修',
       url: 'https://www.aa.ntnu.edu.tw/zh_tw/FAQ/Registry&Graduate/MajorChange',
+    },
+    doubleMajorLink: {
+      label: '教務處｜雙主修甄選制學系清單',
+      url: 'https://www.aa.ntnu.edu.tw/zh_tw/Registry/RequestTransfer/Doublemajor',
+    },
+    transferRuleLink: {
+      label: '教務處｜轉系與轉學生相關規定',
+      url: 'https://www.aa.ntnu.edu.tw/zh_tw/Registry/RequestTransfer',
     },
   },
 }
@@ -527,9 +545,39 @@ export const resources = {
         url: 'https://counseling.sa.ntnu.edu.tw/',
       },
     ],
-    tbd: [
-      '宿舍電費計算方式、垃圾丟棄地點與時間（各宿舍規定略有不同，待確認）',
+    tbd: [],
+  },
+  dormRules: {
+    title: '宿舍電費與垃圾丟棄規定',
+    items: [
+      '電費採浮動費率，依各校區當期繳交台灣電力公司的電費計算，並非固定費率（並非每度 5.5 元這種固定標準）',
+      '學七舍寢室需另外自行負擔熱泵電費與熱泵水費',
+      '寢室垃圾須自行分類，一般垃圾需於規定時間丟棄至清潔車，不得任意棄置',
+      '違反宿舍規定依「學生宿舍管理要點」扣點：學年累計達 10 點，降低下學年住校順序 1 順位；累計達 20 點，勒令退宿',
     ],
+    links: [
+      {
+        label: '學生宿舍住宿費一覽表（電費計價說明）',
+        url: 'https://www.scribd.com/document/665627574/%E5%AD%B8%E7%94%9F%E5%AE%BF%E8%88%8D%E4%BD%8F%E5%AE%BF%E8%B2%BB%E4%B8%80%E8%A6%BD%E8%A1%A8-1040914%E6%9B%B4%E6%96%B0',
+      },
+      { label: '學生宿舍管理要點（垃圾處理規範）', url: 'http://web.mtc.ntnu.edu.tw/upload_files/Dorm_Regulations.pdf' },
+      {
+        label: '學生宿舍管理要點修訂草案對照表（扣點退宿機制）',
+        url: 'https://sw.ntnu.edu.tw/File/News/71-DE-B8-39-57-FD-E7-4F-47-B0-B3-DC-FB-E0-3B-E0.pdf',
+      },
+    ],
+  },
+  dormAddresses: {
+    title: '宿舍與主要建築物地址',
+    items: [
+      { name: '誠樓', campus: '和平校區（校本部）', address: '臺北市大安區和平東路一段 162 號' },
+      { name: '學七舍、男二舍、女二舍', campus: '公館校區', address: '臺北市文山區汀州路四段 88 號' },
+      { name: '女一舍', campus: '和平校區', address: '臺北市大安區師大路 11 號' },
+    ],
+    officialLink: {
+      label: '學生住宿服務中心｜各宿舍位置圖與地址',
+      url: 'https://dorm.sa.ntnu.edu.tw/officelocation/',
+    },
   },
 }
 
@@ -593,11 +641,13 @@ export const mapCategories = {
   校區: { color: '#161457', dotClass: 'bg-navy-950' },
   交通: { color: '#0284c7', dotClass: 'bg-sky-600' },
   美食: { color: '#e11d48', dotClass: 'bg-rose-600' },
+  宿舍: { color: '#d97706', dotClass: 'bg-amber-600' },
 }
 
 // 座標來源：校區座標取自 OpenStreetMap（Photon 地理編碼）；接駁車／公車站牌座標取自轉聯會新生包內
 // Google 街景連結解析出的實際經緯度；美食地點座標為所在巷弄的街廓層級定位（非精確門牌釘選）。
-// 宿舍（學七舍、學二舍、誠樓等）座標尚未取得可靠來源，故未列入地圖，待確認後再補上。
+// 誠樓、學七舍／男二舍／女二舍座標採用其所在校區的官方地址定位（非個別建物精確釘選）。
+// 女一舍（師大路11號）尚未取得可靠座標來源，故未列入地圖，待確認後再補上。
 export const mapLocations = [
   { id: 'campus-heping', name: '師大和平校區（校本部）', category: '校區', lat: 25.0257576, lng: 121.5266168 },
   { id: 'campus-gongguan', name: '師大公館校區', category: '校區', lat: 25.0082321, lng: 121.5357715 },
@@ -635,10 +685,18 @@ export const mapLocations = [
   { id: 'food-porridge', name: '食粥致神仙', category: '美食', lat: 25.0244322, lng: 121.5294163 },
   { id: 'food-burger', name: '13_Burger', category: '美食', lat: 25.0242752, lng: 121.5289903 },
   { id: 'food-katsu', name: '咔滋日式豬排專賣店', category: '美食', lat: 25.0241, lng: 121.5288 },
+  { id: 'dorm-cheng', name: '誠樓（和平校區）', category: '宿舍', lat: 25.0259, lng: 121.5263 },
+  {
+    id: 'dorm-gongguan',
+    name: '學七舍／男二舍／女二舍（公館校區）',
+    category: '宿舍',
+    lat: 25.0084,
+    lng: 121.5354,
+  },
 ]
 
 export const mapNote =
-  '地圖標記為街廓／巷弄層級的概略位置，非精確門牌釘選，實際地點請以美食清單中的 Google Maps 連結為準。宿舍（學七舍、學二舍、誠樓等）座標尚未取得可靠來源，待確認後補上。'
+  '地圖標記為街廓／巷弄層級的概略位置，非精確門牌釘選，實際地點請以美食清單中的 Google Maps 連結為準；宿舍標記為所在校區的官方地址位置，非個別建物精確釘選。女一舍（師大路11號）座標尚未取得可靠來源，待確認後補上。'
 
 // ---------------------------------------------------------------------------
 // 常用連結

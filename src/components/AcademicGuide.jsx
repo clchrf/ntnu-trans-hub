@@ -27,6 +27,7 @@ function CreditTransferPanel() {
         <div className="mt-6 rounded-2xl border border-rose-200 bg-rose-50/60 p-5">
           <p className="text-[13px] font-semibold text-rose-700">申請期間</p>
           <p className="mt-1 text-[14px] text-rose-700">{creditTransfer.window}</p>
+          <p className="mt-2 text-[12px] leading-relaxed text-rose-600">{creditTransfer.generalWindowNote}</p>
         </div>
       </div>
 
@@ -55,7 +56,10 @@ function CreditTransferPanel() {
           ))}
         </ul>
         <p className="mt-4 text-[12px] text-navy-400">諮詢窗口：{creditTransfer.contact}</p>
-        <OfficialLink link={creditTransfer.officialLink} className="mt-4" />
+        <div className="mt-4 flex flex-wrap gap-3">
+          <OfficialLink link={creditTransfer.officialLink} />
+          <OfficialLink link={creditTransfer.handbookLink} />
+        </div>
       </div>
     </div>
   )
@@ -106,10 +110,22 @@ function CourseSelectionPanel() {
 
       <div className="mt-10 rounded-2xl bg-navy-50 p-6">
         <h3 className="text-[15px] font-semibold text-navy-950">{courseSelection.crossProgram.title}</h3>
-        <p className="mt-2 text-[13px] leading-relaxed text-navy-600">
+        <ul className="mt-3 space-y-2">
+          {courseSelection.crossProgram.rules.map((r, i) => (
+            <li key={i} className="flex items-start gap-2 text-[13px] leading-relaxed text-navy-700">
+              <Pill />
+              {r}
+            </li>
+          ))}
+        </ul>
+        <p className="mt-3 text-[12px] leading-relaxed text-navy-500">
           待確認：{courseSelection.crossProgram.notice}
         </p>
-        <OfficialLink link={courseSelection.crossProgram.link} className="mt-3" />
+        <div className="mt-3 flex flex-wrap gap-3">
+          <OfficialLink link={courseSelection.crossProgram.link} />
+          <OfficialLink link={courseSelection.crossProgram.doubleMajorLink} />
+          <OfficialLink link={courseSelection.crossProgram.transferRuleLink} />
+        </div>
       </div>
     </div>
   )

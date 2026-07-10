@@ -9,9 +9,9 @@ export default function ClubIntro() {
             關於轉聯會
           </span>
           <h2 className="mt-4 text-3xl font-semibold tracking-tight text-navy-950">
-            我們不收會費，
+            我們想把轉學生的互助精神
             <br />
-            只想把當年沒人告訴我們的事，先告訴你
+            傳承下去
           </h2>
           <p className="mt-5 text-[14px] leading-relaxed text-navy-600">{club.description}</p>
 

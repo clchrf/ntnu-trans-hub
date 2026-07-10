@@ -37,7 +37,7 @@ function LinkList({ items }) {
 }
 
 export default function Resources() {
-  const { archive, campusLife, food, community, campusResources } = resources
+  const { archive, campusLife, food, community, campusResources, dormRules, dormAddresses } = resources
 
   return (
     <section id="resources" className="bg-navy-50/50 py-24">
@@ -190,6 +190,50 @@ export default function Resources() {
               待確認：{campusResources.tbd.join('；')}
             </div>
           )}
+        </div>
+
+        {/* 宿舍規定與地址 */}
+        <div className="card-ios mt-6 p-8">
+          <h3 className="text-[17px] font-semibold text-navy-950">{dormRules.title}</h3>
+          <ul className="mt-3 grid gap-3 md:grid-cols-2">
+            {dormRules.items.map((r, i) => (
+              <li key={i} className="rounded-xl bg-navy-50 p-4 text-[13px] leading-relaxed text-navy-700">
+                {r}
+              </li>
+            ))}
+          </ul>
+          <div className="mt-4 flex flex-wrap gap-3">
+            {dormRules.links.map((l, i) => (
+              <a
+                key={i}
+                href={l.url}
+                target="_blank"
+                rel="noreferrer"
+                className="text-[12px] text-navy-500 underline decoration-navy-200 underline-offset-4 hover:text-navy-950"
+              >
+                {l.label} ↗
+              </a>
+            ))}
+          </div>
+
+          <h3 className="mt-8 text-[17px] font-semibold text-navy-950">{dormAddresses.title}</h3>
+          <div className="mt-4 grid gap-3 sm:grid-cols-3">
+            {dormAddresses.items.map((d, i) => (
+              <div key={i} className="rounded-2xl bg-navy-50 p-4">
+                <p className="text-[14px] font-medium text-navy-950">{d.name}</p>
+                <p className="mt-1 text-[12px] text-navy-500">{d.campus}</p>
+                <p className="mt-1 text-[12px] leading-relaxed text-navy-600">{d.address}</p>
+              </div>
+            ))}
+          </div>
+          <a
+            href={dormAddresses.officialLink.url}
+            target="_blank"
+            rel="noreferrer"
+            className="mt-4 inline-block text-[12px] text-navy-500 underline decoration-navy-200 underline-offset-4 hover:text-navy-950"
+          >
+            {dormAddresses.officialLink.label} ↗
+          </a>
         </div>
       </div>
     </section>

@@ -37,7 +37,19 @@ export default function ClubIntro() {
                 >
                   {e.date}
                 </span>
-                <span className="pt-1.5 text-[14px] text-navy-800">{e.label}</span>
+                <span className="pt-1.5 text-[14px] text-navy-800">
+                  {e.label}
+                  {e.url && (
+                    <a
+                      href={e.url}
+                      target="_blank"
+                      rel="noreferrer"
+                      className="ml-2 text-[12px] font-medium text-navy-500 underline decoration-navy-300 underline-offset-4 hover:text-navy-950"
+                    >
+                      報名 ↗
+                    </a>
+                  )}
+                </span>
               </li>
             ))}
           </ol>

@@ -8,6 +8,7 @@ import CampusMap from './components/CampusMap'
 import Resources from './components/Resources'
 import FAQ from './components/FAQ'
 import Feedback from './components/Feedback'
+import WelcomeMessage from './components/WelcomeMessage'
 import Footer from './components/Footer'
 
 export default function App() {
@@ -24,6 +25,7 @@ export default function App() {
         <Resources />
         <FAQ />
         <Feedback />
+        <WelcomeMessage />
       </main>
       <Footer />
     </div>

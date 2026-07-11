@@ -1,4 +1,14 @@
-import { timeline, creditTransfer, courseSelection, transportation, resources, faqs, mapLocations } from './content'
+import {
+  timeline,
+  creditTransfer,
+  creditTransferContacts,
+  courseSelection,
+  transportation,
+  resources,
+  faqs,
+  mapLocations,
+  aiAssistant,
+} from './content'
 
 // 集中建立全站搜尋索引：每筆包含 title / snippet / href（供跳轉）/ tag（分類標籤）
 function build() {
@@ -16,6 +26,21 @@ function build() {
   items.push({ tag: '學務指南', title: '學分抵免申請資格與流程', snippet: creditTransfer.window, href: '#academic-guide' })
   creditTransfer.rules.forEach((r) => {
     items.push({ tag: '學分抵免', title: r, snippet: '', href: '#academic-guide' })
+  })
+  creditTransferContacts.forEach((c) => {
+    items.push({ tag: '學分抵免窗口', title: c.item, snippet: `${c.office}　${c.phone}`, href: '#academic-guide' })
+  })
+  items.push({
+    tag: '學分抵免',
+    title: creditTransfer.splitFormTip.title,
+    snippet: creditTransfer.splitFormTip.detail,
+    href: '#academic-guide',
+  })
+  items.push({
+    tag: '學分抵免',
+    title: creditTransfer.englishChineseMakeup.title,
+    snippet: creditTransfer.englishChineseMakeup.detail,
+    href: '#academic-guide',
   })
 
   courseSelection.phases.forEach((p) => {
@@ -95,6 +120,8 @@ function build() {
     snippet: '匿名投稿也可以',
     href: '#feedback',
   })
+
+  items.push({ tag: '提問', title: aiAssistant.label, snippet: aiAssistant.tips.join('；'), href: '#faq' })
 
   return items
 }

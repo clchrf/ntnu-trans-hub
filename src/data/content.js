@@ -23,6 +23,8 @@ export const club = {
     { role: '會長', dept: '電機系117', name: '李欣妍' },
     { role: '副會長', dept: '衛教系117', name: '潘貞臻' },
   ],
+  welcomeMessage:
+    '大家好，歡迎來到師大！經歷重重考驗來到這裡，你們已經證明了自己的優秀。轉學生活的初期或許會感到忙碌與挑戰，請記得放慢腳步，保持信心，師大是個充滿活力的地方，希望各位可以好好享受校園生活。若在適應上有任何疑難雜症，請務必聯繫轉聯會，我們會竭盡所能，陪伴大家走過適應期，讓我們一起創造精彩的師大生活吧！',
   contact: {
     email: 'ntnutrans2016@gmail.com',
     instagram: {
@@ -33,7 +35,8 @@ export const club = {
     facebook: { label: 'NTNU Trans 轉學生聯會', url: 'https://www.facebook.com/share/1EMQtQu4ts/?mibextid=wwXIfr' },
   },
   events: [
-    { date: '08/02', label: '選課說明會' },
+    { date: '08/02', label: '選課說明會', url: 'https://forms.gle/3jd6ig2f6EBAm29v6' },
+    { date: '09/04', label: '轉學生座談會' },
     { date: '09/09', label: '開學相見歡' },
     { date: '敬請期待…', label: '更多活動陸續公布', tbd: true },
   ],
@@ -178,6 +181,13 @@ export const timeline = [
     category: '選課',
   },
   {
+    start: '2026-09-04',
+    end: '2026-09-04',
+    date: '09/04',
+    title: '轉學生座談會',
+    category: '迎新',
+  },
+  {
     start: '2026-09-07',
     end: '2026-09-07',
     date: '09/07',
@@ -245,12 +255,27 @@ export const creditTransfer = {
   window: '115 年 8 月 24 日至 9 月 11 日止，逾期不受理，須待次學期再辦理。',
   generalWindowNote:
     '一般規則：學分抵免作業於各學期開學前一週起受理，至開學後一週內依規定辦理完畢，逾期不受理（實際仍以每學期教務處公告的正式期限為準）。',
+  documentsNeeded: ['抵免申請表（依開課單位數量，可能需要數張）', '原校歷年成績單正本（數張）', '欲抵免的原校課程之課程大綱'],
   procedure: [
-    '登入校務行政資訊入口網／教務資訊系統／一般科目抵免申請系統，線上提出申請',
-    '列印申請表，並檢附原就讀學校成績單正本',
-    '交由開課系（所）審核，再送教務處註冊組辦理',
-    '送件約 3 個工作天後，可於「教務資訊系統／成績相關／抵免申請紀錄查詢」查詢結果',
+    '登入校務行政入口網／教務資訊系統（學生版）／成績相關／一般科目抵免申請系統，線上新增一般科目抵免',
+    '將相關文件繳至開課系所／單位進行審核',
+    '審核完成後，將抵免申請表繳至教務處課務組辦理抵免',
+    '送件約 5 個工作天後，可於「校務行政入口→教務資訊系統→成績相關→成績查詢→採計與抵免成績」查詢結果',
   ],
+  splitFormTip: {
+    title: '抵免流程小提醒：什麼是「拆單」',
+    detail:
+      '同一次抵免申請常會遇到不同開課單位審核的課，例如專業必修（歸各系審）、通識課（歸通識教育中心審）、體育課（歸體育室審）。如果全部填在同一張申請單上印出來，這張紙本就得跑很長的公文旅行。建議在系統線上申請時「依開課單位分開新增」，印出來就不會被整合在同一張，跑得比較快（例如：共同英文的開課單位是共教會外文組，就獨立成一張）。',
+  },
+  selfCheckTip: {
+    title: '抵免還沒申請完，要怎麼選課？',
+    detail:
+      '用一份「抵免自我確認清單」記錄每一門課的抵免狀況：先把確定沒修過的必修、系上選修，或是師大特有的通識課排進課表；優先選你確定不會被抵掉的課。遇到被擋修的課，先寫信跟老師說明自己是轉學生、目前抵免還在跑流程；若老師沒回信，開學第一週直接到課堂當面告知老師是轉學生，向老師索取授權碼加選。',
+  },
+  englishChineseMakeup: {
+    title: '共同英文、國文沒抵免到，怎麼加選？',
+    detail: '英文：08/31–09/18 下午 5 點前完成線上表單申請，學校會協助加選；國文：直接在全校加退選階段加選即可。',
+  },
   rules: [
     '僅限「入學前」取得之學分，且以入學學年度前 10 年內修習及格者為限（其他法令另有規定者除外）',
     '學士班學生抵免學分總數不得超過 50 學分',
@@ -275,10 +300,26 @@ export const creditTransfer = {
 // ---------------------------------------------------------------------------
 export const courseSelection = {
   phases: [
-    { name: '第一階段網路選課', date: '08/04 – 08/07', note: '一般科目登記分發、通識／體育／教程志願分發' },
-    { name: '第二階段網路選課', date: '08/17 – 08/19', note: '所有課程登記分發' },
-    { name: '新生階段選課', date: '08/28 – 08/31', note: '僅限入學後尚無在學紀錄者' },
-    { name: '全校加退選', date: '09/07 – 09/21', note: '線上即時加退選；09/20 退選截止、09/21 僅可加選' },
+    {
+      name: '第一階段網路選課',
+      date: '08/04 – 08/07',
+      note: '普通體育／通識／教育學程採填寫志願後分發；其他課程登記後分發',
+    },
+    {
+      name: '第二階段網路選課',
+      date: '08/17 – 08/19',
+      note: '所有課程登記後分發，選課時間先後不影響電腦分發結果',
+    },
+    {
+      name: '新生階段選課',
+      date: '08/28 – 08/31',
+      note: '僅限入學後尚無在學紀錄者；體育最多填 10 個志願、至多分發 1 門，通識最多填 30 個志願、至多分發 3 門',
+    },
+    {
+      name: '全校加退選',
+      date: '09/07 – 09/21',
+      note: '線上即時加退選（含授權碼選課）；名額、衝堂、學分上限、限修、擋修、先修等條件即時判斷；09/20 退選截止、09/21 僅可加選',
+    },
   ],
   notes: [
     '每學期至少 16 學分，至多 27 學分；超過需申請「超修」，不足需申請「低修」',
@@ -492,8 +533,12 @@ export const resources = {
     lineGroups: {
       title: 'Line 社群',
       items: [
+        { label: '轉聯會新生群組', url: 'https://line.me/ti/g/ceZp4kbCQC' },
         { label: '118 級群組', url: 'https://line.me/ti/g2/l1mYb8PdomJJmGGqSGkn16GDD9rGp_XA1MA_5g' },
-        { label: '119 級：可直接在 Line 內搜尋群組', url: null },
+        {
+          label: '119 級群組',
+          url: 'https://line.me/ti/g2/OR0rlRmS4dgoWOJKwG8mYwpnYfxTpFpdA2V6Hg',
+        },
       ],
     },
     schoolSocial: {
@@ -533,10 +578,11 @@ export const resources = {
       },
       {
         label: '適合讀書、放空、吃東西的地方',
-        detail: '自習室、文薈廳皆可飲食；圖書館內則不可飲食。',
+        detail: '自習室 24 小時開放、可以吃東西；文薈廳可以吃東西；圖書館僅一樓入口前的輕食區可以吃東西。',
         subLinks: [
           { label: '自習室', url: 'https://www.lib.ntnu.edu.tw/service/facility_11.jsp' },
           { label: '文薈廳', url: 'https://www.lib.ntnu.edu.tw/service/facility_09_01.jsp' },
+          { label: '圖書館（輕食區規定）', url: 'https://www.lib.ntnu.edu.tw/about/business_01_01.jsp' },
         ],
       },
       {
@@ -578,6 +624,16 @@ export const resources = {
       label: '學生住宿服務中心｜各宿舍位置圖與地址',
       url: 'https://dorm.sa.ntnu.edu.tw/officelocation/',
     },
+    videoLink: {
+      label: '宿舍介紹影片',
+      url: 'https://youtu.be/l4-qnUWhfgs?si=SGmX1IzDt6ne-YZT',
+    },
+    communityLinks: [
+      { label: '師大組寢換宿版', url: 'https://www.facebook.com/groups/ntnudorm' },
+      { label: '出清社團（台大、師大、台科大面交）', url: 'https://www.facebook.com/groups/1017189488302135' },
+      { label: '出清社團（台大面交）', url: 'https://www.facebook.com/groups/closeout/' },
+      { label: '校內住宿優惠', url: 'https://assistance.sa.ntnu.edu.tw/ministry-edu-4/' },
+    ],
   },
 }
 
@@ -592,6 +648,10 @@ export const faqs = [
   {
     q: '學分抵免一定要在開學前辦完嗎？',
     a: '抵免申請期間為 8/24–9/11，逾期不受理、須待次學期再辦理，強烈建議在時限內盡早準備原校成績單正本並送出申請，避免影響選課學分規劃。',
+  },
+  {
+    q: '轉學生會很難交朋友嗎？',
+    a: '一開始真的會不太容易，但師大社團非常多，推薦大家可以參加有興趣的社團，也非常歡迎來轉聯會認識一樣是轉學、轉系的朋友！',
   },
   {
     q: '轉學生可以參加哪幾個階段的選課？',
@@ -625,6 +685,17 @@ export const faqs = [
 
 // 提問／回饋管道：直接導向 IG 私訊，不使用另外的 Google 表單
 export const questionIgDmUrl = club.contact.instagram.dmUrl
+
+// 轉聯 AI 小助理：24 小時線上，適合先釐清問題、不知道該找哪個處室時先問它
+export const aiAssistant = {
+  label: '轉聯 AI 小助理',
+  url: 'https://gemini.google.com/gem/1mnqxpN8sr8JobZFa2xaNJMkH7OBAtLeR?usp=sharing',
+  tips: [
+    '不知道問題該找哪個處室、不知道怎麼寫信或打電話，都可以先問它',
+    '打電話給承辦人前，先用它釐清自己真正要問的問題',
+    '暑假期間承辦人可能請假，記得多預留幾天，並主動告知對方自己是轉學生',
+  ],
+}
 
 // 許願池（學期回饋）表單：以 Web3Forms 靜態表單直接寄送到社團信箱，無需自建後端
 // access key 綁定 ntnutrans2016@gmail.com，若要更換收件信箱請至 web3forms.com 重新產生
@@ -720,7 +791,14 @@ export const usefulLinks = [
   { label: '學生住宿服務中心', url: 'https://dorm.sa.ntnu.edu.tw/' },
   { label: '通識教育中心', url: 'https://www.cge.ntnu.edu.tw/' },
   { label: '師大課程地圖系統', url: 'http://coursemap.itc.ntnu.edu.tw/course_map_all/class.php?code=GU' },
+  { label: '轉聯 AI 小助理', url: aiAssistant.url },
+  { label: '選課說明會報名表單', url: 'https://forms.gle/3jd6ig2f6EBAm29v6' },
+  { label: '各處室聯絡電話', url: 'https://www.ntnu.edu.tw/static.php?id=contactus' },
+  { label: '專責導師室', url: 'https://counselor.sa.ntnu.edu.tw/ourteam/' },
 ]
+
+// 學生緊急聯絡專線（校安中心）
+export const emergencyPhone = '(02) 7749-3132'
 
 export const contactPhones = [
   { item: '註冊繳費', office: '出納組', phone: '(02) 7749-1343' },
@@ -732,4 +810,63 @@ export const contactPhones = [
   { item: '獎助學金／學生團體保險', office: '生活輔導組', phone: '(02) 7749-1061' },
   { item: '境外生保險／獎助學金', office: '國際事務處', phone: '(02) 7749-1282' },
   { item: '新生體檢', office: '健康中心', phone: '(02) 7749-3107' },
+  { item: '學生緊急聯絡專線', office: '校安中心', phone: '(02) 7749-3132' },
+]
+
+// 學分抵免各業務負責窗口（依開課單位分類，來源：轉聯會新生包）
+export const creditTransferContacts = [
+  {
+    item: '選課／擋修',
+    office: '課務組',
+    contact: '',
+    phone: '(02) 7749-1114',
+    location: '行政大樓 3 樓',
+  },
+  {
+    item: '中文思辨與表達課程（原國文課學分抵免）',
+    office: '通識教育中心｜國文教育組',
+    contact: '蔡小姐',
+    phone: '(02) 7749-1129',
+    email: 'm.tsai@ntnu.edu.tw',
+    location: '行政大樓 2 樓',
+  },
+  {
+    item: '共同英文抵免／免修',
+    office: '通識教育中心｜外文教育組',
+    contact: '江小姐',
+    phone: '(02) 7749-1117',
+    email: 'racheljiang@ntnu.edu.tw',
+    location: '行政大樓 2 樓',
+  },
+  {
+    item: '通識學分',
+    office: '通識教育中心｜共同教育委員會',
+    contact: '謝小姐',
+    phone: '(02) 7749-1118',
+    email: 'iting@ntnu.edu.tw',
+    location: '行政大樓 2 樓',
+  },
+  {
+    item: '體育學分抵免',
+    office: '體育與運動科學系辦公室｜普通體育組',
+    contact: '張小姐',
+    phone: '(02) 7749-3193',
+    email: 'changwi@ntnu.edu.tw',
+    location: '體育館 3 樓',
+  },
+  {
+    item: '學士班學分抵免',
+    office: '註冊組／各系辦公室',
+    contact: '',
+    phone: '(02) 7749-1077',
+    location: '行政大樓 1 樓／各系系辦公室',
+  },
+  {
+    item: '教育專業課程抵免',
+    office: '師資培育學院｜師培課程組',
+    contact: '陳小姐',
+    phone: '(02) 7749-3193',
+    email: 'changwi@ntnu.edu.tw',
+    location: '體育館 3 樓',
+  },
 ]

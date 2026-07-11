@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react'
-import { faqs, questionIgDmUrl, usefulLinks, contactPhones } from '../data/content'
+import { faqs, questionIgDmUrl, aiAssistant, usefulLinks, contactPhones } from '../data/content'
 
 function AccordionItem({ index, item, openIndex, setOpenIndex }) {
   const isOpen = openIndex === index
@@ -61,16 +61,33 @@ export default function FAQ() {
           <div className="mt-8 rounded-3xl bg-navy-950 p-8 text-center text-white">
             <p className="text-[16px] font-semibold">還有問題沒解決？</p>
             <p className="mt-2 text-[13px] text-navy-200">
-              私訊我們的 Instagram 最快，學長姐會盡快回覆
+              24 小時都在線的轉聯 AI 小助理，或私訊 Instagram，學長姐會盡快回覆
             </p>
-            <a
-              href={questionIgDmUrl}
-              target="_blank"
-              rel="noreferrer"
-              className="mt-5 inline-block rounded-full bg-white px-6 py-2.5 text-[13px] font-medium text-navy-950 transition hover:bg-navy-100"
-            >
-              私訊 Instagram 提問
-            </a>
+            <div className="mt-5 flex flex-wrap items-center justify-center gap-3">
+              <a
+                href={aiAssistant.url}
+                target="_blank"
+                rel="noreferrer"
+                className="inline-block rounded-full bg-white px-6 py-2.5 text-[13px] font-medium text-navy-950 transition hover:bg-navy-100"
+              >
+                問{aiAssistant.label}
+              </a>
+              <a
+                href={questionIgDmUrl}
+                target="_blank"
+                rel="noreferrer"
+                className="inline-block rounded-full border border-white/40 px-6 py-2.5 text-[13px] font-medium text-white transition hover:bg-white/10"
+              >
+                私訊 Instagram 提問
+              </a>
+            </div>
+            <ul className="mx-auto mt-6 max-w-sm space-y-1.5 text-left">
+              {aiAssistant.tips.map((t, i) => (
+                <li key={i} className="text-[12px] leading-relaxed text-navy-300">
+                  ・{t}
+                </li>
+              ))}
+            </ul>
           </div>
         </div>
 

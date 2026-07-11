@@ -226,14 +226,35 @@ export default function Resources() {
               </div>
             ))}
           </div>
-          <a
-            href={dormAddresses.officialLink.url}
-            target="_blank"
-            rel="noreferrer"
-            className="mt-4 inline-block text-[12px] text-navy-500 underline decoration-navy-200 underline-offset-4 hover:text-navy-950"
-          >
-            {dormAddresses.officialLink.label} ↗
-          </a>
+          <div className="mt-4 flex flex-wrap gap-x-4 gap-y-2">
+            <a
+              href={dormAddresses.officialLink.url}
+              target="_blank"
+              rel="noreferrer"
+              className="text-[12px] text-navy-500 underline decoration-navy-200 underline-offset-4 hover:text-navy-950"
+            >
+              {dormAddresses.officialLink.label} ↗
+            </a>
+            <a
+              href={dormAddresses.videoLink.url}
+              target="_blank"
+              rel="noreferrer"
+              className="text-[12px] text-navy-500 underline decoration-navy-200 underline-offset-4 hover:text-navy-950"
+            >
+              {dormAddresses.videoLink.label} ↗
+            </a>
+            {dormAddresses.communityLinks.map((l, i) => (
+              <a
+                key={i}
+                href={l.url}
+                target="_blank"
+                rel="noreferrer"
+                className="text-[12px] text-navy-500 underline decoration-navy-200 underline-offset-4 hover:text-navy-950"
+              >
+                {l.label} ↗
+              </a>
+            ))}
+          </div>
         </div>
       </div>
     </section>

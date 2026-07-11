@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://clchrf.github.io/ntnu-trans-hub/sitemap.xml

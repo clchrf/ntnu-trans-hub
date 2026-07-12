@@ -695,6 +695,7 @@ export const aiAssistant = {
     '打電話給承辦人前，先用它釐清自己真正要問的問題',
     '暑假期間承辦人可能請假，記得多預留幾天，並主動告知對方自己是轉學生',
   ],
+  disclaimer: 'AI 回答僅供參考，可能有錯誤或過時資訊，正式規定請以官方公告或本站標註「官方」的連結為準。',
 }
 
 // 許願池（學期回饋）表單：以 Web3Forms 靜態表單直接寄送到社團信箱，無需自建後端
@@ -813,60 +814,3 @@ export const contactPhones = [
   { item: '學生緊急聯絡專線', office: '校安中心', phone: '(02) 7749-3132' },
 ]
 
-// 學分抵免各業務負責窗口（依開課單位分類，來源：轉聯會新生包）
-export const creditTransferContacts = [
-  {
-    item: '選課／擋修',
-    office: '課務組',
-    contact: '',
-    phone: '(02) 7749-1114',
-    location: '行政大樓 3 樓',
-  },
-  {
-    item: '中文思辨與表達課程（原國文課學分抵免）',
-    office: '通識教育中心｜國文教育組',
-    contact: '蔡小姐',
-    phone: '(02) 7749-1129',
-    email: 'm.tsai@ntnu.edu.tw',
-    location: '行政大樓 2 樓',
-  },
-  {
-    item: '共同英文抵免／免修',
-    office: '通識教育中心｜外文教育組',
-    contact: '江小姐',
-    phone: '(02) 7749-1117',
-    email: 'racheljiang@ntnu.edu.tw',
-    location: '行政大樓 2 樓',
-  },
-  {
-    item: '通識學分',
-    office: '通識教育中心｜共同教育委員會',
-    contact: '謝小姐',
-    phone: '(02) 7749-1118',
-    email: 'iting@ntnu.edu.tw',
-    location: '行政大樓 2 樓',
-  },
-  {
-    item: '體育學分抵免',
-    office: '體育與運動科學系辦公室｜普通體育組',
-    contact: '張小姐',
-    phone: '(02) 7749-3193',
-    email: 'changwi@ntnu.edu.tw',
-    location: '體育館 3 樓',
-  },
-  {
-    item: '學士班學分抵免',
-    office: '註冊組／各系辦公室',
-    contact: '',
-    phone: '(02) 7749-1077',
-    location: '行政大樓 1 樓／各系系辦公室',
-  },
-  {
-    item: '教育專業課程抵免',
-    office: '師資培育學院｜師培課程組',
-    contact: '陳小姐',
-    phone: '(02) 7749-3193',
-    email: 'changwi@ntnu.edu.tw',
-    location: '體育館 3 樓',
-  },
-]

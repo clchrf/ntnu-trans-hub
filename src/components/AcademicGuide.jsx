@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import { creditTransfer, courseSelection, graduationRequirements, creditTransferContacts } from '../data/content'
+import { creditTransfer, courseSelection, graduationRequirements } from '../data/content'
 import OfficialLink from './OfficialLink'
 
 const TABS = ['學分抵免', '選課與通識指南', '畢業門檻與語言檢定']
@@ -84,43 +84,6 @@ function CreditTransferPanel() {
         <div className="rounded-2xl bg-navy-50 p-5">
           <h4 className="text-[13px] font-semibold text-navy-950">{creditTransfer.englishChineseMakeup.title}</h4>
           <p className="mt-2 text-[12px] leading-relaxed text-navy-600">{creditTransfer.englishChineseMakeup.detail}</p>
-        </div>
-      </div>
-
-      <div className="md:col-span-2">
-        <h3 className="text-[15px] font-semibold text-navy-950">各學分業務負責窗口</h3>
-        <div className="mt-4 overflow-x-auto rounded-2xl border border-navy-100">
-          <table className="w-full min-w-[560px] text-left text-[12px]">
-            <thead>
-              <tr className="bg-navy-50 text-navy-500">
-                <th className="px-4 py-2.5 font-medium">辦理項目</th>
-                <th className="px-4 py-2.5 font-medium">負責單位</th>
-                <th className="px-4 py-2.5 font-medium">聯繫方式</th>
-                <th className="px-4 py-2.5 font-medium">辦公室位置</th>
-              </tr>
-            </thead>
-            <tbody>
-              {creditTransferContacts.map((c, i) => (
-                <tr key={i} className={i % 2 === 0 ? 'bg-white' : 'bg-navy-50/60'}>
-                  <td className="px-4 py-2.5 text-navy-700">{c.item}</td>
-                  <td className="px-4 py-2.5 text-navy-700">
-                    {c.office}
-                    {c.contact && `｜${c.contact}`}
-                  </td>
-                  <td className="px-4 py-2.5 text-navy-700">
-                    {c.phone}
-                    {c.email && (
-                      <>
-                        <br />
-                        {c.email}
-                      </>
-                    )}
-                  </td>
-                  <td className="px-4 py-2.5 text-navy-700">{c.location}</td>
-                </tr>
-              ))}
-            </tbody>
-          </table>
         </div>
       </div>
     </div>

@@ -88,6 +88,9 @@ export default function FAQ() {
                 </li>
               ))}
             </ul>
+            <p className="mx-auto mt-4 max-w-sm rounded-xl bg-amber-500/10 p-3 text-[11px] leading-relaxed text-amber-200">
+              ⚠️ {aiAssistant.disclaimer}
+            </p>
           </div>
         </div>
 

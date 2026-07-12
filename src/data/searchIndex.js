@@ -1,7 +1,6 @@
 import {
   timeline,
   creditTransfer,
-  creditTransferContacts,
   courseSelection,
   transportation,
   resources,
@@ -26,9 +25,6 @@ function build() {
   items.push({ tag: '學務指南', title: '學分抵免申請資格與流程', snippet: creditTransfer.window, href: '#academic-guide' })
   creditTransfer.rules.forEach((r) => {
     items.push({ tag: '學分抵免', title: r, snippet: '', href: '#academic-guide' })
-  })
-  creditTransferContacts.forEach((c) => {
-    items.push({ tag: '學分抵免窗口', title: c.item, snippet: `${c.office}　${c.phone}`, href: '#academic-guide' })
   })
   items.push({
     tag: '學分抵免',

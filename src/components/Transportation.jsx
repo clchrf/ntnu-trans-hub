@@ -43,6 +43,23 @@ export default function Transportation() {
         </div>
       </div>
 
+      <div className="card-ios mt-6 p-8">
+        <span className="rounded-full bg-sky-50 px-3 py-1 text-[12px] font-medium text-sky-700">
+          三校共用
+        </span>
+        <h3 className="mt-4 text-[17px] font-semibold text-navy-950">{transportation.allianceShuttle.title}</h3>
+        <p className="mt-2 text-[14px] leading-relaxed text-navy-600">{transportation.allianceShuttle.detail}</p>
+        <p className="mt-3 text-[12px] text-navy-500">{transportation.allianceShuttle.schedule}</p>
+        <div className="mt-4 grid gap-3 sm:grid-cols-2 md:grid-cols-4">
+          {transportation.allianceShuttle.stops.map((s, i) => (
+            <div key={i} className="rounded-xl bg-navy-50 p-3">
+              <p className="text-[12px] font-semibold text-navy-500">{s.campus}</p>
+              <p className="mt-0.5 text-[13px] text-navy-950">{s.location}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+
       <div className="mt-6 rounded-3xl bg-navy-950 p-8 text-white">
         <h3 className="text-[15px] font-semibold">捷運族怎麼走？</h3>
         <p className="mt-2 text-[14px] leading-relaxed text-navy-200">{transportation.metro.detail}</p>

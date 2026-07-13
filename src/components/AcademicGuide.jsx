@@ -150,7 +150,51 @@ function CourseSelectionPanel() {
           <OfficialLink link={courseSelection.crossProgram.link} />
           <OfficialLink link={courseSelection.crossProgram.doubleMajorLink} />
           <OfficialLink link={courseSelection.crossProgram.transferRuleLink} />
+          <OfficialLink link={courseSelection.crossProgram.qaLink} />
         </div>
+
+        <div className="mt-5 rounded-xl bg-white p-4">
+          <h4 className="text-[13px] font-semibold text-navy-950">
+            {courseSelection.crossProgram.changeMajorWorkaround.title}
+          </h4>
+          <p className="mt-2 text-[13px] leading-relaxed text-navy-600">
+            {courseSelection.crossProgram.changeMajorWorkaround.detail}
+          </p>
+          <p className="mt-2 text-[12px] leading-relaxed text-amber-700">
+            待確認：{courseSelection.crossProgram.changeMajorWorkaround.notice}
+          </p>
+        </div>
+      </div>
+
+      <div className="mt-6 rounded-2xl bg-navy-50 p-6">
+        <h3 className="text-[15px] font-semibold text-navy-950">{courseSelection.teachingProgram.title}</h3>
+        <div className="mt-4 grid gap-4 md:grid-cols-3">
+          <div className="rounded-xl bg-white p-4">
+            <h4 className="text-[13px] font-semibold text-navy-950">
+              {courseSelection.teachingProgram.withPriorStatus.title}
+            </h4>
+            <p className="mt-2 text-[12px] leading-relaxed text-navy-600">
+              {courseSelection.teachingProgram.withPriorStatus.detail}
+            </p>
+          </div>
+          <div className="rounded-xl bg-white p-4">
+            <h4 className="text-[13px] font-semibold text-navy-950">
+              {courseSelection.teachingProgram.creditTransferRule.title}
+            </h4>
+            <p className="mt-2 text-[12px] leading-relaxed text-navy-600">
+              {courseSelection.teachingProgram.creditTransferRule.detail}
+            </p>
+          </div>
+          <div className="rounded-xl bg-white p-4">
+            <h4 className="text-[13px] font-semibold text-navy-950">
+              {courseSelection.teachingProgram.withoutPriorStatus.title}
+            </h4>
+            <p className="mt-2 text-[12px] leading-relaxed text-navy-600">
+              {courseSelection.teachingProgram.withoutPriorStatus.detail}
+            </p>
+          </div>
+        </div>
+        <OfficialLink link={courseSelection.teachingProgram.officialLink} className="mt-4" />
       </div>
     </div>
   )

@@ -172,6 +172,8 @@ export const timeline = [
     date: '09/01 – 09/04',
     title: '伯樂大學堂',
     category: '迎新',
+    detail:
+      '師大專屬迎新營隊，提前認識同系夥伴、走訪校園熟悉選課與行政流程、認識社團。報名／聯絡：林小姐 (02)7749-1060　lnc1060@ntnu.edu.tw；曾先生 (02)7749-1062　tkc1993123@ntnu.edu.tw',
   },
   {
     start: '2026-09-04',
@@ -254,7 +256,7 @@ export const creditTransfer = {
   ],
   window: '115 年 8 月 24 日至 9 月 11 日止，逾期不受理，須待次學期再辦理。',
   generalWindowNote:
-    '一般規則：學分抵免作業於各學期開學前一週起受理，至開學後一週內依規定辦理完畢，逾期不受理（實際仍以每學期教務處公告的正式期限為準）。',
+    '一般規則：學分抵免作業於各學期開學前兩週與開學第一週皆可進行，逾期不受理（實際仍以每學期教務處公告的正式期限為準）。',
   documentsNeeded: ['抵免申請表（依開課單位數量，可能需要數張）', '原校歷年成績單正本（數張）', '欲抵免的原校課程之課程大綱'],
   procedure: [
     '登入校務行政入口網／教務資訊系統（學生版）／成績相關／一般科目抵免申請系統，線上新增一般科目抵免',
@@ -357,7 +359,9 @@ export const courseSelection = {
     summary:
       '師大與臺大、臺灣科大同屬「臺灣大學系統」，日間學制學生可跨校選課，選課時間與本校選課期程相同，統一於本校選課系統選課。',
     rules: [
-      '臺大／臺科大課程：同本校選課期程，於本校選課系統選課即可',
+      '臺大／臺科大課程：直接在師大選課系統中查詢並登記即可，無須另外跨校註冊',
+      '臺大、臺科大每門課會釋出特定保留名額給外校生；登記人數超過開放名額時，一律由電腦系統抽籤分發',
+      '修畢及格後，學分會自動匯入師大成績單；該課程是否能承認為本系專業選修，須由所屬系辦公室認定，若不予承認通常列入畢業自由學分',
       '臺大／臺科大以外之學校：需依行事曆上校際選課期程至教務系統登錄後，另以紙本申請',
       '校際選課學分總數（含臺大、臺科大以外之學校）不得超過所屬系所規定最低畢業學分數的 1/3',
       '師大 A–D 節上課時間與臺大、臺科大不同，安排跑堂動線時務必先換算節次對照表，抓寬通勤／換教室時間',
@@ -374,11 +378,18 @@ export const courseSelection = {
   crossProgram: {
     title: '雙主修、輔系、學分學程、轉系申請',
     rules: [
+      '轉學生可以申請雙主修、輔系、預修生資格，但不能申請轉系──不限年級，這是轉學生身份本身的限制（依教務處官方問答集 Q5）',
+      '雙主修、輔系、預修生資格修習期間以「1 個」為限，修畢後可再以認證方式取得額外的雙主修／輔系',
       '大學部雙主修、輔系規定已大幅鬆綁：只要修畢該領域規定的「第一門課」，即可申請登記修讀雙主修及輔系（預修生登記制）',
       '採甄選制的學系（如美術系、設計系、體育系、心輔系〔112 學年度起〕等）不適用前述預修生登記制度，仍須另外參加該系甄選',
-      '轉系規定：學士班二年級轉學生不得申請轉系（避免重複轉系）',
     ],
     notice: '各系實際名額、截止日期仍逐年公告而異，正式規定請以教務處與各系所公告為準。',
+    changeMajorWorkaround: {
+      title: '「A 系進 B 系出」：用雙主修變更畢業學系',
+      detail:
+        '轉學生受限於轉系規定，但可透過完成雙主修條件，實質變更畢業學系：需先申請並取得 B 系（欲畢業學系）之雙主修資格，於修業年限內修畢 B 系全部專業必修學分，同時取得並符合原 A 系之輔系資格；達成後可於畢業當學期向教務處提出專案審查，申請改以 B 系作為主修學系畢業。',
+      notice: '此機制的具體審查條件與流程，查無教務處公開頁面可獨立驗證，來源為轉聯會新生包整理，正式規定請務必向教務處或欲加修學系辦公室確認（待確認）。',
+    },
     link: {
       label: '教務處 FAQ：轉系、雙主修、輔系、學分學程、逕讀博士學位、碩士先修',
       url: 'https://www.aa.ntnu.edu.tw/zh_tw/FAQ/Registry&Graduate/MajorChange',
@@ -390,6 +401,32 @@ export const courseSelection = {
     transferRuleLink: {
       label: '教務處｜轉系與轉學生相關規定',
       url: 'https://www.aa.ntnu.edu.tw/zh_tw/Registry/RequestTransfer',
+    },
+    qaLink: {
+      label: '教務處｜學士班轉系、雙主修、輔系常見問答集（PDF）',
+      url: 'https://www.csie.ntnu.edu.tw/wp-content/uploads/2025/03/%E8%BD%89%E7%B3%BB%E3%80%81%E9%9B%99%E4%B8%BB%E4%BF%AE%E3%80%81%E8%BC%94%E7%B3%BB%E3%80%81%E9%A0%90%E4%BF%AE%E7%94%9F%E5%B8%B8%E8%A6%8B%E5%95%8F%E7%AD%94%E9%9B%86-1.pdf',
+    },
+  },
+  teachingProgram: {
+    title: '教育學程（教程）',
+    withPriorStatus: {
+      title: '原校已具備師資生資格者：資格移轉',
+      detail:
+        '須於入學開學第一週內，備妥「原校核定之師資生資格證明」及「歷年成績單」，主動向本校師資培育學院提出資格移轉申請。移轉具時效性，逾期視同放棄，未來若欲取得資格，須重新參加師資生甄選。',
+    },
+    creditTransferRule: {
+      title: '教育專業課程學分抵免',
+      detail:
+        '限已取得師資生資格者申請；抵免科目成績須達 B-（70 分）以上，且為 10 年內修習、課程內容須與本校相符；學分數不得以少抵多或與系上畢業學分重複計算，教材教法與教學實習課程不得相互抵免。',
+    },
+    withoutPriorStatus: {
+      title: '不具原校資格者：參與師資生甄選',
+      detail:
+        '轉學生若欲取得師培資格，須參與本校每學期辦理之師資生甄選，考核項目涵蓋書面審查、筆試與面試；首學期學業成績（GPA）為書面審查重要依據。錄取後每學期學業總平均低於 2.44（即未達 70 分），將被擋修教育專業課程。',
+    },
+    officialLink: {
+      label: '師資培育學院｜教育學分抵免說明',
+      url: 'https://tecs.otecs.ntnu.edu.tw/page.aspx?t=qna&g=0',
     },
   },
 }
@@ -434,6 +471,18 @@ export const transportation = {
       label: '台北市公車動態｜復興幹線即時班次',
       url: 'https://ebus.gov.taipei/EBus/VsSimpleMap?routeid=0161000800',
     },
+  },
+  allianceShuttle: {
+    title: '三校聯盟交通車（師大／臺大／臺科大）',
+    detail: '師大、臺大、臺科大教職員工生皆可免費搭乘，上下車主動出示學生證即可，是跨校選課、跑堂的第三種選擇。',
+    eligibility: '師大、臺大、臺科大之教職員工生，上下車主動出示學生證即可免費搭乘',
+    schedule: '僅於學期中的平日（週一至週五）行駛；遇國定假日、校際活動停課日、寒暑假皆全面停駛',
+    stops: [
+      { campus: '師大校本部', location: '圖書館校區（和平東路一段側）' },
+      { campus: '臺大校本部', location: '傅鐘／行政大樓附近' },
+      { campus: '臺科大校本部', location: '靠近正門或指定候車區' },
+      { campus: '師大公館校區', location: '靠近理學院綜合大樓' },
+    ],
   },
   metro: {
     detail: '搭捷運可於古亭站（步行約 10 分鐘）步行至和平校區；公館站步行約 15 分鐘可達公館校區。',
@@ -577,13 +626,20 @@ export const resources = {
         url: 'https://www.phr.ntnu.edu.tw/zh_tw/rental/place202',
       },
       {
-        label: '適合讀書、放空、吃東西的地方',
-        detail: '自習室 24 小時開放、可以吃東西；文薈廳可以吃東西；圖書館僅一樓入口前的輕食區可以吃東西。',
+        label: '適合讀書、放空、吃東西的地方（校本部）',
+        detail:
+          '自習室 24 小時開放、可以吃東西；本部地餐、文薈廳可以吃東西聊天討論；圖書館 B1 可以喝飲料或吃簡單輕食；圖書館其餘樓層內部全面禁食。',
         subLinks: [
           { label: '自習室', url: 'https://www.lib.ntnu.edu.tw/service/facility_11.jsp' },
-          { label: '文薈廳', url: 'https://www.lib.ntnu.edu.tw/service/facility_09_01.jsp' },
-          { label: '圖書館（輕食區規定）', url: 'https://www.lib.ntnu.edu.tw/about/business_01_01.jsp' },
+          { label: '本部地餐', url: 'https://maps.app.goo.gl/UEEz3fsy6LPnULi98' },
+          { label: '文薈廳', url: 'https://maps.app.goo.gl/7Fn8id82pxPQSWVt5' },
+          { label: '圖書館 B1（輕食區）', url: 'https://maps.app.goo.gl/CVz3BwVuUtuTcquq8' },
         ],
+      },
+      {
+        label: '適合讀書的地方（公館校區）',
+        detail: '圖書館公館分館，內部全面禁食。',
+        subLinks: [{ label: '圖書館公館分館', url: 'https://maps.app.goo.gl/Z1X9ws7JQbFdEgfTA' }],
       },
       {
         label: '學生輔導中心',
@@ -787,6 +843,7 @@ export const usefulLinks = [
   { label: '學生輔導中心', url: 'https://counseling.sa.ntnu.edu.tw/' },
   { label: '學生兵役申請', url: 'https://assistance.sa.ntnu.edu.tw/rights-3/' },
   { label: '就學貸款', url: 'https://assistance.sa.ntnu.edu.tw/loan/' },
+  { label: '學雜費減免', url: 'https://assistance.sa.ntnu.edu.tw/exemption/' },
   { label: '課程查詢／選課系統', url: 'https://www.aa.ntnu.edu.tw/zh_tw/selectives/Dayschool/CourseInquiry' },
   { label: '學雜費專區', url: 'https://www.aa.ntnu.edu.tw/Tuition' },
   { label: '學生住宿服務中心', url: 'https://dorm.sa.ntnu.edu.tw/' },

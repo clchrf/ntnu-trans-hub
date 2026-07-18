@@ -1,4 +1,4 @@
-import { club } from '../data/content'
+import { club, infoPackPdf } from '../data/content'
 
 export default function Footer() {
   const base = import.meta.env.BASE_URL
@@ -49,6 +49,11 @@ export default function Footer() {
               <li><a href="#map" className="hover:text-white">校園地圖</a></li>
               <li><a href="#faq" className="hover:text-white">FAQ 與提問</a></li>
               <li><a href="#feedback" className="hover:text-white">許願池</a></li>
+              <li>
+                <a href={`${base}files/${infoPackPdf.filename}`} target="_blank" rel="noreferrer" className="hover:text-white">
+                  資訊懶人包 PDF
+                </a>
+              </li>
             </ul>
           </div>
         </div>

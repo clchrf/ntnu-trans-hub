@@ -1,7 +1,9 @@
 import SearchBar from './SearchBar'
-import { club } from '../data/content'
+import { club, infoPackPdf } from '../data/content'
 
 export default function Hero() {
+  const base = import.meta.env.BASE_URL
+
   return (
     <section id="top" className="relative overflow-hidden bg-white pb-20 pt-16 md:pb-28 md:pt-24">
       <div
@@ -44,6 +46,14 @@ export default function Hero() {
             className="rounded-full border border-navy-200 px-6 py-3 text-[14px] font-medium text-navy-800 transition hover:border-navy-400"
           >
             我有問題想問
+          </a>
+          <a
+            href={`${base}files/${infoPackPdf.filename}`}
+            target="_blank"
+            rel="noreferrer"
+            className="rounded-full border border-navy-200 px-6 py-3 text-[14px] font-medium text-navy-800 transition hover:border-navy-400"
+          >
+            下載資訊懶人包 PDF
           </a>
         </div>
       </div>

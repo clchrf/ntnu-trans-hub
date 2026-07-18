@@ -743,7 +743,7 @@ export const faqs = [
 // 檔案位於 public/files/，路徑需搭配 import.meta.env.BASE_URL 組合使用
 export const infoPackPdf = {
   label: '第 11 屆轉學生資訊懶人包（完整 PDF）',
-  filename: '第11屆轉學生聯會_資訊懶人包.pdf',
+  filename: 'ntnu-trans-info-pack.pdf',
 }
 
 // 提問／回饋管道：直接導向 IG 私訊，不使用另外的 Google 表單

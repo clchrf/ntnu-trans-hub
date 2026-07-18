@@ -35,7 +35,7 @@ export const club = {
     facebook: { label: 'NTNU Trans 轉學生聯會', url: 'https://www.facebook.com/share/1EMQtQu4ts/?mibextid=wwXIfr' },
   },
   events: [
-    { date: '08/02', label: '選課說明會', url: 'https://forms.gle/3jd6ig2f6EBAm29v6' },
+    { date: '08/01', label: '選課說明會', url: 'https://forms.gle/3jd6ig2f6EBAm29v6' },
     { date: '09/04', label: '轉學生座談會' },
     { date: '09/09', label: '開學相見歡' },
     { date: '敬請期待…', label: '更多活動陸續公布', tbd: true },

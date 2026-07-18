@@ -1,4 +1,5 @@
 import SearchBar from './SearchBar'
+import PdfDownloadLink from './PdfDownloadLink'
 import { club, infoPackPdf } from '../data/content'
 
 export default function Hero() {
@@ -47,14 +48,13 @@ export default function Hero() {
           >
             我有問題想問
           </a>
-          <a
+          <PdfDownloadLink
             href={`${base}files/${infoPackPdf.filename}`}
-            target="_blank"
-            rel="noreferrer"
+            iconSrc={`${base}logo/icon-navy.png`}
             className="rounded-full border border-navy-200 px-6 py-3 text-[14px] font-medium text-navy-800 transition hover:border-navy-400"
           >
             下載資訊懶人包 PDF
-          </a>
+          </PdfDownloadLink>
         </div>
       </div>
     </section>

@@ -1,3 +1,4 @@
+import PdfDownloadLink from './PdfDownloadLink'
 import { club, infoPackPdf } from '../data/content'
 
 export default function Footer() {
@@ -50,9 +51,13 @@ export default function Footer() {
               <li><a href="#faq" className="hover:text-white">FAQ 與提問</a></li>
               <li><a href="#feedback" className="hover:text-white">許願池</a></li>
               <li>
-                <a href={`${base}files/${infoPackPdf.filename}`} target="_blank" rel="noreferrer" className="hover:text-white">
+                <PdfDownloadLink
+                  href={`${base}files/${infoPackPdf.filename}`}
+                  iconSrc={`${base}logo/icon-white.png`}
+                  className="hover:text-white"
+                >
                   資訊懶人包 PDF
-                </a>
+                </PdfDownloadLink>
               </li>
             </ul>
           </div>

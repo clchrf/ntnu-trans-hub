@@ -1,7 +1,6 @@
 import { useEffect, useState } from 'react'
 import { faqs, questionIgDmUrl, aiAssistant, usefulLinks, contactPhones } from '../data/content'
 import SectionHeading from './SectionHeading'
-import { ChatIcon } from './icons'
 
 function AccordionItem({ index, item, openIndex, setOpenIndex }) {
   const isOpen = openIndex === index
@@ -50,7 +49,6 @@ export default function FAQ() {
   return (
     <section id="faq" className="mx-auto max-w-5xl px-6 py-24">
       <SectionHeading
-        icon={ChatIcon}
         eyebrow="SUPPORT"
         title="FAQ 與提問"
         subtitle="最常被問的問題整理在這裡，找不到答案就直接留言問我們"

@@ -1,7 +1,6 @@
 import { useState } from 'react'
 import { feedbackForm } from '../data/content'
 import SectionHeading from './SectionHeading'
-import { SparkleIcon } from './icons'
 
 const IDENTITIES = ['轉學生', '轉系生', '已經是學長姐', '其他']
 
@@ -48,7 +47,7 @@ export default function Feedback() {
     <section id="feedback" className="bg-navy-50/50 py-24">
       <div className="mx-auto max-w-2xl px-6">
         <SectionHeading
-          icon={SparkleIcon}
+          align="center"
           eyebrow="WISHING WELL"
           title="許願池"
           subtitle="已經轉進來一學期的你，有什麼想跟下一屆說的、想稱讚或吐槽轉聯會的，都歡迎留言——匿名也沒問題，我們都會認真看。"

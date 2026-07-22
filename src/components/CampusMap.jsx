@@ -3,7 +3,6 @@ import L from 'leaflet'
 import 'leaflet/dist/leaflet.css'
 import { mapCategories, mapLocations, mapNote } from '../data/content'
 import SectionHeading from './SectionHeading'
-import { MapIcon } from './icons'
 
 export default function CampusMap() {
   const containerRef = useRef(null)
@@ -52,7 +51,7 @@ export default function CampusMap() {
   return (
     <section id="map" className="mx-auto max-w-5xl px-6 py-24">
       <SectionHeading
-        icon={MapIcon}
+        align="center"
         eyebrow="CAMPUS MAP"
         title="校園地圖"
         subtitle="校區、接駁車站牌、美食推薦，一次看在地圖上"

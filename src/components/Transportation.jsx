@@ -1,7 +1,6 @@
 import { transportation, courseSelection } from '../data/content'
 import OfficialLink from './OfficialLink'
 import SectionHeading from './SectionHeading'
-import { MapPinIcon } from './icons'
 
 function StopRow({ stops }) {
   return (
@@ -20,7 +19,6 @@ export default function Transportation() {
   return (
     <section id="transportation" className="mx-auto max-w-5xl px-6 py-24">
       <SectionHeading
-        icon={MapPinIcon}
         eyebrow="GETTING AROUND"
         title="跨區交通包"
         subtitle="校本部、公館兩頭跑，還要跟臺大臺科大跑堂？先看這裡"
@@ -112,10 +110,9 @@ export default function Transportation() {
       <div className="card-ios mt-6 p-8">
         <h3 className="text-[17px] font-semibold text-navy-950">校際選課（臺灣大學系統）規定</h3>
         <p className="mt-2 text-[14px] leading-relaxed text-navy-600">{courseSelection.intercollegiate.summary}</p>
-        <ul className="mt-4 grid gap-3 md:grid-cols-2">
+        <ul className="mt-4 divide-y divide-navy-100 border-t border-navy-100">
           {courseSelection.intercollegiate.rules.map((r, i) => (
-            <li key={i} className="flex items-start gap-2 rounded-xl bg-navy-50 p-4 text-[13px] leading-relaxed text-navy-700">
-              <span className="mt-1.5 h-1.5 w-1.5 flex-none rounded-full bg-navy-400" />
+            <li key={i} className="py-3 text-[13px] leading-relaxed text-navy-700">
               {r}
             </li>
           ))}

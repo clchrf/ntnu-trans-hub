@@ -6,18 +6,14 @@ export default function Hero() {
   const base = import.meta.env.BASE_URL
 
   return (
-    <section id="top" className="relative overflow-hidden bg-white pb-20 pt-16 md:pb-28 md:pt-24">
-      <div
-        aria-hidden
-        className="pointer-events-none absolute inset-x-0 -top-32 -z-10 flex justify-center"
-      >
-        <div className="h-72 w-72 rounded-full bg-navy-100 blur-3xl md:h-96 md:w-96" />
-      </div>
-
+    <section id="top" className="bg-white pb-20 pt-16 md:pb-28 md:pt-24">
       <div className="mx-auto max-w-4xl px-6 text-center">
-        <span className="inline-block rounded-full bg-navy-50 px-4 py-1.5 text-[13px] font-medium text-navy-700">
-          {club.edition}．{club.englishName}
-        </span>
+        <div className="flex items-center justify-center gap-2">
+          <span className="h-[2px] w-6 bg-navy-950" />
+          <span className="text-[12px] font-semibold uppercase tracking-[0.14em] text-navy-500">
+            {club.edition}．{club.englishName}
+          </span>
+        </div>
 
         <h1 className="mt-6 text-4xl font-semibold tracking-tight text-navy-950 md:text-6xl">
           給轉學生的

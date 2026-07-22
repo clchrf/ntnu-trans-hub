@@ -2,7 +2,6 @@ import { useState } from 'react'
 import { creditTransfer, courseSelection, graduationRequirements } from '../data/content'
 import OfficialLink from './OfficialLink'
 import SectionHeading from './SectionHeading'
-import { BookIcon } from './icons'
 
 const TABS = ['學分抵免', '選課與通識指南', '畢業門檻與語言檢定']
 
@@ -59,10 +58,9 @@ function CreditTransferPanel() {
 
       <div className="md:col-span-2">
         <h3 className="text-[15px] font-semibold text-navy-950">注意事項</h3>
-        <ul className="mt-3 grid gap-3 md:grid-cols-2">
+        <ul className="mt-3 divide-y divide-navy-100 border-t border-navy-100">
           {creditTransfer.rules.map((r, i) => (
-            <li key={i} className="flex items-start gap-2 rounded-xl bg-navy-50 p-4 text-[13px] leading-relaxed text-navy-700">
-              <Pill />
+            <li key={i} className="py-3 text-[13px] leading-relaxed text-navy-700">
               {r}
             </li>
           ))}
@@ -229,13 +227,12 @@ export default function AcademicGuide() {
     <section id="academic-guide" className="bg-navy-50/50 py-24">
       <div className="mx-auto max-w-5xl px-6">
         <SectionHeading
-          icon={BookIcon}
           eyebrow="ACADEMIC GUIDE"
           title="學務指南"
           subtitle="學分抵免、選課、通識、畢業門檻，轉學生最常搞混的規定整理在這裡"
         />
 
-        <div className="mx-auto mt-10 flex max-w-xl flex-wrap justify-center gap-2 rounded-full bg-white p-1.5 shadow-sm">
+        <div className="mt-10 flex max-w-xl flex-wrap gap-2 rounded-full bg-white p-1.5 shadow-sm">
           {TABS.map((t, i) => (
             <button
               key={t}

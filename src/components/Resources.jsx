@@ -1,6 +1,5 @@
 import { resources } from '../data/content'
 import SectionHeading from './SectionHeading'
-import { CompassIcon } from './icons'
 
 function ListColumn({ title, items }) {
   return (
@@ -45,7 +44,6 @@ export default function Resources() {
     <section id="resources" className="bg-navy-50/50 py-24">
       <div className="mx-auto max-w-5xl px-6">
         <SectionHeading
-          icon={CompassIcon}
           eyebrow="LOCAL LIFE"
           title="資源與在地生活"
           subtitle="考古題筆記、真實踩點美食、交朋友管道，師大人跟公館人都用得到"
@@ -202,9 +200,9 @@ export default function Resources() {
         {/* 宿舍規定與地址 */}
         <div className="card-ios mt-6 p-8">
           <h3 className="text-[17px] font-semibold text-navy-950">{dormRules.title}</h3>
-          <ul className="mt-3 grid gap-3 md:grid-cols-2">
+          <ul className="mt-3 divide-y divide-navy-100 border-t border-navy-100">
             {dormRules.items.map((r, i) => (
-              <li key={i} className="rounded-xl bg-navy-50 p-4 text-[13px] leading-relaxed text-navy-700">
+              <li key={i} className="py-3 text-[13px] leading-relaxed text-navy-700">
                 {r}
               </li>
             ))}

@@ -1,5 +1,7 @@
 import { useEffect, useState } from 'react'
 import { faqs, questionIgDmUrl, aiAssistant, usefulLinks, contactPhones } from '../data/content'
+import SectionHeading from './SectionHeading'
+import { ChatIcon } from './icons'
 
 function AccordionItem({ index, item, openIndex, setOpenIndex }) {
   const isOpen = openIndex === index
@@ -47,10 +49,12 @@ export default function FAQ() {
 
   return (
     <section id="faq" className="mx-auto max-w-5xl px-6 py-24">
-      <div className="text-center">
-        <h2 className="text-3xl font-semibold tracking-tight text-navy-950 md:text-4xl">FAQ 與提問</h2>
-        <p className="mt-4 text-[15px] text-navy-500">最常被問的問題整理在這裡，找不到答案就直接留言問我們</p>
-      </div>
+      <SectionHeading
+        icon={ChatIcon}
+        eyebrow="SUPPORT"
+        title="FAQ 與提問"
+        subtitle="最常被問的問題整理在這裡，找不到答案就直接留言問我們"
+      />
 
       <div className="mt-14 grid gap-12 lg:grid-cols-3">
         <div className="lg:col-span-2">

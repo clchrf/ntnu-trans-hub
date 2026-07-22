@@ -1,5 +1,7 @@
 import { transportation, courseSelection } from '../data/content'
 import OfficialLink from './OfficialLink'
+import SectionHeading from './SectionHeading'
+import { MapPinIcon } from './icons'
 
 function StopRow({ stops }) {
   return (
@@ -17,10 +19,12 @@ function StopRow({ stops }) {
 export default function Transportation() {
   return (
     <section id="transportation" className="mx-auto max-w-5xl px-6 py-24">
-      <div className="text-center">
-        <h2 className="text-3xl font-semibold tracking-tight text-navy-950 md:text-4xl">跨區交通包</h2>
-        <p className="mt-4 text-[15px] text-navy-500">校本部、公館兩頭跑，還要跟臺大臺科大跑堂？先看這裡</p>
-      </div>
+      <SectionHeading
+        icon={MapPinIcon}
+        eyebrow="GETTING AROUND"
+        title="跨區交通包"
+        subtitle="校本部、公館兩頭跑，還要跟臺大臺科大跑堂？先看這裡"
+      />
 
       <div className="mt-14 grid gap-6 md:grid-cols-2">
         <div className="card-ios p-8">
@@ -96,7 +100,7 @@ export default function Transportation() {
         href={transportation.campusMap.url}
         target="_blank"
         rel="noreferrer"
-        className="card-ios mt-14 flex items-center justify-between gap-4 p-6 transition hover:shadow-md"
+        className="card-ios mt-14 flex items-center justify-between gap-4 p-6 transition duration-200 hover:-translate-y-0.5 hover:shadow-md"
       >
         <div>
           <h3 className="text-[15px] font-semibold text-navy-950">{transportation.campusMap.label}</h3>

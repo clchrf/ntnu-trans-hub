@@ -1,9 +1,11 @@
 import { resources } from '../data/content'
+import SectionHeading from './SectionHeading'
+import { CompassIcon } from './icons'
 
-function ListCard({ title, items }) {
+function ListColumn({ title, items }) {
   return (
-    <div className="card-ios p-6">
-      <h4 className="text-[14px] font-semibold text-navy-950">{title}</h4>
+    <div>
+      <h4 className="text-[13px] font-semibold uppercase tracking-wider text-navy-400">{title}</h4>
       <ul className="mt-3 space-y-1.5">
         {items.map((it, i) => (
           <li key={i} className="text-[13px] text-navy-600">{it}</li>
@@ -42,10 +44,12 @@ export default function Resources() {
   return (
     <section id="resources" className="bg-navy-50/50 py-24">
       <div className="mx-auto max-w-5xl px-6">
-        <div className="text-center">
-          <h2 className="text-3xl font-semibold tracking-tight text-navy-950 md:text-4xl">資源與在地生活</h2>
-          <p className="mt-4 text-[15px] text-navy-500">考古題筆記、真實踩點美食、交朋友管道，師大人跟公館人都用得到</p>
-        </div>
+        <SectionHeading
+          icon={CompassIcon}
+          eyebrow="LOCAL LIFE"
+          title="資源與在地生活"
+          subtitle="考古題筆記、真實踩點美食、交朋友管道，師大人跟公館人都用得到"
+        />
 
         {/* 考古題 */}
         <div className="card-ios mt-14 p-8">
@@ -58,7 +62,7 @@ export default function Resources() {
                 href={s.url}
                 target="_blank"
                 rel="noreferrer"
-                className="rounded-2xl bg-navy-50 p-4 transition hover:bg-navy-100"
+                className="rounded-2xl bg-navy-50 p-4 transition duration-200 hover:-translate-y-0.5 hover:bg-navy-100 hover:shadow-md"
               >
                 <p className="text-[14px] font-medium text-navy-950">{s.label} ↗</p>
                 <p className="mt-1 text-[12px] leading-relaxed text-navy-500">{s.detail}</p>
@@ -91,7 +95,7 @@ export default function Resources() {
                 href={s.url}
                 target="_blank"
                 rel="noreferrer"
-                className="rounded-2xl bg-navy-50 p-4 transition hover:bg-navy-100"
+                className="rounded-2xl bg-navy-50 p-4 transition duration-200 hover:-translate-y-0.5 hover:bg-navy-100 hover:shadow-md"
               >
                 <p className="text-[14px] font-medium text-navy-950">{s.name} ↗</p>
                 {s.note && <p className="mt-1 text-[12px] leading-relaxed text-navy-500">{s.note}</p>}
@@ -112,10 +116,13 @@ export default function Resources() {
         </div>
 
         {/* 生活機能 */}
-        <div className="mt-6 grid gap-6 md:grid-cols-3">
-          <ListCard title={campusLife.printShops.title} items={campusLife.printShops.items} />
-          <ListCard title={campusLife.dailyGoods.title} items={campusLife.dailyGoods.items} />
-          <ListCard title={campusLife.postOffice.title} items={campusLife.postOffice.items} />
+        <div className="card-ios mt-6 p-8">
+          <h3 className="text-[17px] font-semibold text-navy-950">生活機能</h3>
+          <div className="mt-4 grid gap-6 sm:grid-cols-3">
+            <ListColumn title={campusLife.printShops.title} items={campusLife.printShops.items} />
+            <ListColumn title={campusLife.dailyGoods.title} items={campusLife.dailyGoods.items} />
+            <ListColumn title={campusLife.postOffice.title} items={campusLife.postOffice.items} />
+          </div>
         </div>
 
         {/* 認識朋友與社團 */}

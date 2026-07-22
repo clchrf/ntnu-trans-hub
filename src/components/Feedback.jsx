@@ -1,5 +1,7 @@
 import { useState } from 'react'
 import { feedbackForm } from '../data/content'
+import SectionHeading from './SectionHeading'
+import { SparkleIcon } from './icons'
 
 const IDENTITIES = ['轉學生', '轉系生', '已經是學長姐', '其他']
 
@@ -45,12 +47,12 @@ export default function Feedback() {
   return (
     <section id="feedback" className="bg-navy-50/50 py-24">
       <div className="mx-auto max-w-2xl px-6">
-        <div className="text-center">
-          <h2 className="text-3xl font-semibold tracking-tight text-navy-950 md:text-4xl">許願池</h2>
-          <p className="mt-4 text-[15px] leading-relaxed text-navy-500">
-            已經轉進來一學期的你，有什麼想跟下一屆說的、想稱讚或吐槽轉聯會的，都歡迎留言——匿名也沒問題，我們都會認真看。
-          </p>
-        </div>
+        <SectionHeading
+          icon={SparkleIcon}
+          eyebrow="WISHING WELL"
+          title="許願池"
+          subtitle="已經轉進來一學期的你，有什麼想跟下一屆說的、想稱讚或吐槽轉聯會的，都歡迎留言——匿名也沒問題，我們都會認真看。"
+        />
 
         <form onSubmit={handleSubmit} className="card-ios mt-10 p-8">
           {/* 蜜罐欄位，一般使用者看不到，機器人才會填 */}

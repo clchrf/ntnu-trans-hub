@@ -2,6 +2,8 @@ import { useMemo, useState } from 'react'
 import { timeline, timelineCategories, timelineSource, officialCalendarLink } from '../data/content'
 import { buildMonthMatrix, isoDate, eventsOnDate, WEEKDAYS } from '../utils/calendar'
 import OfficialLink from './OfficialLink'
+import SectionHeading from './SectionHeading'
+import { CalendarIcon } from './icons'
 
 const MONTHS = [
   { year: 2026, monthIndex: 7, label: '2026 年 8 月' },
@@ -95,14 +97,12 @@ export default function Timeline() {
 
   return (
     <section id="timeline" className="mx-auto max-w-5xl px-6 py-24">
-      <div className="text-center">
-        <h2 className="text-3xl font-semibold tracking-tight text-navy-950 md:text-4xl">
-          115 學年度重要時程
-        </h2>
-        <p className="mt-4 text-[15px] text-navy-500">
-          選課、學分抵免、註冊繳費、住宿⋯⋯點日期看當天詳情，轉學生最容易錯過的死線都幫你標出來了
-        </p>
-      </div>
+      <SectionHeading
+        icon={CalendarIcon}
+        eyebrow="115 學年度"
+        title="重要時程"
+        subtitle="選課、學分抵免、註冊繳費、住宿⋯⋯點日期看當天詳情，轉學生最容易錯過的死線都幫你標出來了"
+      />
 
       <div className="mt-12 grid gap-6 md:grid-cols-2">
         {MONTHS.map((m) => (

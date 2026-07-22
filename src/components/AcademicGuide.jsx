@@ -1,6 +1,8 @@
 import { useState } from 'react'
 import { creditTransfer, courseSelection, graduationRequirements } from '../data/content'
 import OfficialLink from './OfficialLink'
+import SectionHeading from './SectionHeading'
+import { BookIcon } from './icons'
 
 const TABS = ['學分抵免', '選課與通識指南', '畢業門檻與語言檢定']
 
@@ -226,10 +228,12 @@ export default function AcademicGuide() {
   return (
     <section id="academic-guide" className="bg-navy-50/50 py-24">
       <div className="mx-auto max-w-5xl px-6">
-        <div className="text-center">
-          <h2 className="text-3xl font-semibold tracking-tight text-navy-950 md:text-4xl">學務指南</h2>
-          <p className="mt-4 text-[15px] text-navy-500">學分抵免、選課、通識、畢業門檻，轉學生最常搞混的規定整理在這裡</p>
-        </div>
+        <SectionHeading
+          icon={BookIcon}
+          eyebrow="ACADEMIC GUIDE"
+          title="學務指南"
+          subtitle="學分抵免、選課、通識、畢業門檻，轉學生最常搞混的規定整理在這裡"
+        />
 
         <div className="mx-auto mt-10 flex max-w-xl flex-wrap justify-center gap-2 rounded-full bg-white p-1.5 shadow-sm">
           {TABS.map((t, i) => (

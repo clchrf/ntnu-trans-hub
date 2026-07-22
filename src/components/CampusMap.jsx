@@ -2,6 +2,8 @@ import { useEffect, useRef } from 'react'
 import L from 'leaflet'
 import 'leaflet/dist/leaflet.css'
 import { mapCategories, mapLocations, mapNote } from '../data/content'
+import SectionHeading from './SectionHeading'
+import { MapIcon } from './icons'
 
 export default function CampusMap() {
   const containerRef = useRef(null)
@@ -49,10 +51,12 @@ export default function CampusMap() {
 
   return (
     <section id="map" className="mx-auto max-w-5xl px-6 py-24">
-      <div className="text-center">
-        <h2 className="text-3xl font-semibold tracking-tight text-navy-950 md:text-4xl">校園地圖</h2>
-        <p className="mt-4 text-[15px] text-navy-500">校區、接駁車站牌、美食推薦，一次看在地圖上</p>
-      </div>
+      <SectionHeading
+        icon={MapIcon}
+        eyebrow="CAMPUS MAP"
+        title="校園地圖"
+        subtitle="校區、接駁車站牌、美食推薦，一次看在地圖上"
+      />
 
       <div className="mt-12">
         <div ref={containerRef} className="h-[420px] w-full overflow-hidden rounded-3xl shadow-lg md:h-[500px]" />

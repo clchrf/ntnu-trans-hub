@@ -8,12 +8,9 @@ export default function Hero() {
   return (
     <section id="top" className="bg-white pb-20 pt-16 md:pb-28 md:pt-24">
       <div className="mx-auto max-w-4xl px-6 text-center">
-        <div className="flex items-center justify-center gap-2">
-          <span className="h-[2px] w-6 bg-navy-950" />
-          <span className="text-[12px] font-semibold uppercase tracking-[0.14em] text-navy-500">
-            {club.edition}．{club.englishName}
-          </span>
-        </div>
+        <span className="text-[12px] font-semibold uppercase tracking-[0.14em] text-navy-500">
+          {club.edition}．{club.englishName}
+        </span>
 
         <h1 className="mt-6 text-4xl font-semibold tracking-tight text-navy-950 md:text-6xl">
           給轉學生的
